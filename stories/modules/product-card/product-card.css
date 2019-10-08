@@ -1,0 +1,13 @@
+.product-card {
+  display: inline-block;
+  text-decoration: none;
+  color: initial;
+}
+
+.product-card--small {
+  width: 200px;
+}
+
+.product-card__img {
+  width: 100%;
+}
