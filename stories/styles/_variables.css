@@ -1,0 +1,22 @@
+:root {
+  --gray-05: #f1f1f1;
+  --gray-23: #c4c4c4;
+  --space-l: 60px;
+  --space-m: 40px;
+  --space-s: 20px;
+  --side-padding: 20px;
+  --clamp-max-width: 1280px;
+  --columns-gap-m: 20px;
+  --columns-gap-s: 10px;
+}
+
+@media screen and (min-width: 600px) {
+  :root {
+    --space-l: 120px;
+    --space-m: 80px;
+    --space-s: 40px;
+    --side-padding: 60px;
+    --columns-gap-m: 40px;
+    --columns-gap-s: 20px;
+  }
+}

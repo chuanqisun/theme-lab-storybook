@@ -1,0 +1,33 @@
+@import "../../styles/index.css";
+
+.content-card__img {
+  width: 100%;
+}
+
+.content-card--text-right {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.content-card__text--with-padding {
+  padding: 20px;
+}
+
+.content-card__text--center {
+  text-align: center;
+}
+
+.content-card__text--right {
+  text-align: right;
+}
+
+.content-card--text-over {
+  display: grid;
+  align-items: center;
+}
+.content-card--text-over .content-card__img,
+.content-card--text-over .content-card__text {
+  grid-column: 1;
+  grid-row: 1;  
+}
