@@ -24,8 +24,29 @@
 
 .content-card--text-over {
   display: grid;
-  align-items: center;
 }
+
+.content-card__text--align-c {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.content-card__text--align-n {
+  justify-self: center;
+  text-align: center;
+}
+
+.content-card__text--align-ne {
+  justify-self: end;
+  text-align: end;
+}
+
+.content-card__text--align-s {
+  align-self: end;
+  text-align: center;
+}
+
 .content-card--text-over .content-card__img,
 .content-card--text-over .content-card__text {
   grid-column: 1;
