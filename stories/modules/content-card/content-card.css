@@ -1,35 +1,35 @@
 @import '../../styles/index.css';
 
-.content-card--limit-width {
+.m-content-card--limit-width {
   width: 33%;
 }
 
-.content-card__img {
+.m-content-card__img {
   width: 100%;
 }
 
-.content-card--text-aside {
+.m-content-card--text-aside {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
 }
 
-.content-card__text--with-padding {
+.m-content-card__text--with-padding {
   padding: 20px;
 }
 
-.content-card--text-over {
+.m-content-card--text-over {
   display: grid;
 }
 
-.content-card__text--align-center {
+.m-content-card__text--align-center {
   align-self: center;
   justify-self: center;
   text-align: center;
 }
 
-.content-card--text-over .content-card__img,
-.content-card--text-over .content-card__text {
+.m-content-card--text-over .m-content-card__img,
+.m-content-card--text-over .m-content-card__text {
   grid-column: 1;
   grid-row: 1;
 }

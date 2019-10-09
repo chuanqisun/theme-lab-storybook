@@ -1,13 +1,13 @@
-.product-card {
+.m-product-card {
   display: inline-block;
   text-decoration: none;
   color: initial;
 }
 
-.product-card--small {
+.m-product-card--small {
   width: 200px;
 }
 
-.product-card__img {
+.m-product-card__img {
   width: 100%;
 }
