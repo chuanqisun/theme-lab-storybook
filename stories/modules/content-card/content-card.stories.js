@@ -6,8 +6,8 @@ export default {
   includeStories: ['cardLayout', 'featureLayout', 'heroLayout'],
 };
 
-export const CardImg = () => html`
-  <img class="m-content-card__img" src="https://via.placeholder.com/1440X500" />
+export const CardImg = ({ dimension = '1440X500' } = {}) => html`
+  <img class="m-content-card__img" src="https://via.placeholder.com/${dimension}" />
 `;
 export const CardHeading = () => html`
   <h2 class="m-content-card__heading">Card heading</h2>
@@ -22,8 +22,8 @@ export const CardAction = () => html`
 `;
 
 export const ContentCardCardLayout = () => html`
-  <div class="m-content-card m-content-card--limit-width">
-    ${CardImg()}
+  <div class="m-content-card">
+    ${CardImg({ dimension: '400X400' })}
     <div class="m-content-card__text">
       ${CardHeading()} ${CardParagraph()} ${CardAction()}
     </div>

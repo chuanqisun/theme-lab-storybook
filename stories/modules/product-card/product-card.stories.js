@@ -24,7 +24,7 @@ const price = html`
 `;
 
 export const basic = storyFrom(html`
-  <a href="#" class="m-product-card m-product-card--small">
+  <a href="#" class="m-product-card">
     ${img}
     <div class="m-product-card__text">
       ${heading} ${price}
@@ -33,7 +33,7 @@ export const basic = storyFrom(html`
 `);
 
 export const withDetails = storyFrom(html`
-  <a href="#" class="m-product-card m-product-card--small">
+  <a href="#" class="m-product-card">
     ${img}
     <div class="m-product-card__text">
       ${heading} ${paragraph} ${price}
@@ -42,7 +42,7 @@ export const withDetails = storyFrom(html`
 `);
 
 export const withRating = storyFrom(html`
-  <a href="#" class="m-product-card m-product-card--small">
+  <a href="#" class="m-product-card">
     ${img}
     <div class="m-product-card__text">
       ${heading} ${rating} ${price}

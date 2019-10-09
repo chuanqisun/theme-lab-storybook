@@ -4,10 +4,6 @@
   color: initial;
 }
 
-.m-product-card--small {
-  width: 200px;
-}
-
 .m-product-card__img {
   width: 100%;
 }
