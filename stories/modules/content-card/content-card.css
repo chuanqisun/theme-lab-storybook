@@ -1,10 +1,14 @@
-@import "../../styles/index.css";
+@import '../../styles/index.css';
+
+.content-card--limit-width {
+  width: 33%;
+}
 
 .content-card__img {
   width: 100%;
 }
 
-.content-card--text-right {
+.content-card--text-aside {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -14,41 +18,18 @@
   padding: 20px;
 }
 
-.content-card__text--center {
-  text-align: center;
-}
-
-.content-card__text--right {
-  text-align: right;
-}
-
 .content-card--text-over {
   display: grid;
 }
 
-.content-card__text--align-c {
+.content-card__text--align-center {
   align-self: center;
   justify-self: center;
-  text-align: center;
-}
-
-.content-card__text--align-n {
-  justify-self: center;
-  text-align: center;
-}
-
-.content-card__text--align-ne {
-  justify-self: end;
-  text-align: end;
-}
-
-.content-card__text--align-s {
-  align-self: end;
   text-align: center;
 }
 
 .content-card--text-over .content-card__img,
 .content-card--text-over .content-card__text {
   grid-column: 1;
-  grid-row: 1;  
+  grid-row: 1;
 }

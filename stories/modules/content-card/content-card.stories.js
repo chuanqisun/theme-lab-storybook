@@ -3,134 +3,53 @@ import './content-card.css';
 
 export default {
   title: 'Modules/Content card',
-  includeStories: [
-    'basic',
-    'textAside',
-    'textAsideMultiAction',
-    'textAsideAlignCenter',
-    'textAsideAlignRight',
-    'textOverAlignCenter',
-    'textOverAlignNorthWest',
-    'textOverAlignNorth',
-    'textOverAlignNorthEast',
-    'textOverAlignSouth',
-  ],
+  includeStories: ['cardLayout', 'featureLayout', 'heroLayout'],
 };
 
-const img = html`
+export const CardImg = () => html`
   <img class="content-card__img" src="https://via.placeholder.com/800X600" />
 `;
-const heading = html`
+export const CardHeading = () => html`
   <h2 class="content-card__heading">Card heading</h2>
 `;
-const paragraph = html`
+export const CardParagraph = () => html`
   <p class="content-card__paragraph">
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
   </p>
 `;
-const action = html`
+export const CardAction = () => html`
   <a href="#" class="content-card__action">Call to action</a>
 `;
-const renderAction = label =>
-  html`
-    <a href="#" class="content-card__action">${label}</a>
-  `;
 
-export const contentCard = () => html`
-  <div class="content-card content-card--text-over">
-    ${img}
-    <div class="content-card__text content-card__text--with-padding content-card__text--align-c">
-      ${heading} ${paragraph} ${action}
+export const ContentCardCardLayout = () => html`
+  <div class="content-card content-card--limit-width">
+    ${CardImg()}
+    <div class="content-card__text">
+      ${CardHeading()} ${CardParagraph()} ${CardAction()}
     </div>
   </div>
 `;
 
-export const basic = storyFrom(html`
-  <div class="content-card">
-    ${img}
-    <div class="content-card__text">
-      ${heading} ${paragraph} ${action}
+export const ContentCardHeroLayout = () => html`
+  <div class="content-card content-card--text-over">
+    ${CardImg()}
+    <div class="content-card__text content-card__text--with-padding content-card__text--align-center">
+      ${CardHeading()} ${CardParagraph()} ${CardAction()}
     </div>
   </div>
-`);
+`;
 
-export const textAside = storyFrom(html`
-  <div class="content-card content-card--text-right">
-    ${img}
+export const ContentCardFeatureLayout = () => html`
+  <div class="content-card content-card--text-aside">
+    ${CardImg()}
     <div class="content-card__text content-card__text--with-padding">
-      ${heading} ${paragraph} ${action}
+      ${CardHeading()} ${CardParagraph()} ${CardAction()}
     </div>
   </div>
-`);
+`;
 
-export const textAsideMultiAction = storyFrom(html`
-  <div class="content-card content-card--text-right">
-    ${img}
-    <div class="content-card__text content-card__text--with-padding">
-      ${heading} ${paragraph} ${renderAction('Action 1')} ${renderAction('Action 2')} ${renderAction('Action 3')}
-    </div>
-  </div>
-`);
+export const cardLayout = storyFrom(ContentCardCardLayout());
 
-export const textAsideAlignCenter = storyFrom(html`
-  <div class="content-card content-card--text-right">
-    ${img}
-    <div class="content-card__text content-card__text--with-padding content-card__text--center">
-      ${heading} ${paragraph} ${action}
-    </div>
-  </div>
-`);
+export const featureLayout = storyFrom(ContentCardFeatureLayout());
 
-export const textAsideAlignRight = storyFrom(html`
-  <div class="content-card content-card--text-right">
-    ${img}
-    <div class="content-card__text content-card__text--with-padding content-card__text--right">
-      ${heading} ${paragraph} ${action}
-    </div>
-  </div>
-`);
-
-export const textOverAlignCenter = storyFrom(html`
-  <div class="content-card content-card--text-over">
-    ${img}
-    <div class="content-card__text content-card__text--with-padding content-card__text--align-c">
-      ${heading} ${paragraph} ${action}
-    </div>
-  </div>
-`);
-
-export const textOverAlignNorthWest = storyFrom(html`
-  <div class="content-card content-card--text-over">
-    ${img}
-    <div class="content-card__text content-card__text--with-padding content-card__text--align-nw">
-      ${heading} ${paragraph} ${action}
-    </div>
-  </div>
-`);
-
-export const textOverAlignNorth = storyFrom(html`
-  <div class="content-card content-card--text-over">
-    ${img}
-    <div class="content-card__text content-card__text--with-padding content-card__text--align-n">
-      ${heading} ${paragraph} ${action}
-    </div>
-  </div>
-`);
-
-export const textOverAlignNorthEast = storyFrom(html`
-  <div class="content-card content-card--text-over">
-    ${img}
-    <div class="content-card__text content-card__text--with-padding content-card__text--align-ne">
-      ${heading} ${paragraph} ${action}
-    </div>
-  </div>
-`);
-
-export const textOverAlignSouth = storyFrom(html`
-  <div class="content-card content-card--text-over">
-    ${img}
-    <div class="content-card__text content-card__text--with-padding content-card__text--align-s">
-      ${heading} ${paragraph} ${action}
-    </div>
-  </div>
-`);
+export const heroLayout = storyFrom(ContentCardHeroLayout());
