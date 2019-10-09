@@ -1,0 +1,26 @@
+@import '../../styles/index.css';
+
+.m-info-bar {
+  height: 40px;
+  background-color: var(--gray-23);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.m-header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.m-header__logo {
+  margin-right: auto;
+}
+
+.m-header__nav {
+  width: 100%;
+}
+
+.m-spacer {
+  height: var(--spacer-height);
+}

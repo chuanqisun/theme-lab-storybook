@@ -7,7 +7,7 @@ export default {
 };
 
 export const CardImg = () => html`
-  <img class="m-content-card__img" src="https://via.placeholder.com/800X600" />
+  <img class="m-content-card__img" src="https://via.placeholder.com/1440X500" />
 `;
 export const CardHeading = () => html`
   <h2 class="m-content-card__heading">Card heading</h2>
