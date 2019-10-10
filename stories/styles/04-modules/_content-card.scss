@@ -1,49 +1,75 @@
-.m-content-card--limit-width {
-  width: 33%;
-}
+@import '../02-theme/_breakpoints.scss';
 
-.m-content-card__img {
-  width: 100%;
-}
+.m-content-card {
+  img {
+    width: 100%;
+  }
 
-.m-content-card__heading {
-  font: var(--hero-heading);
-}
+  .heading {
+    margin-top: 12px;
+    font: var(--hero-heading);
+  }
 
-.m-content-card__paragraph {
-  font: var(--hero-paragraph);
-}
+  .paragraph {
+    font: var(--hero-paragraph);
+  }
 
-* + .m-content-card__paragraph {
-  margin-top: 8px; /* paragraph should have 8px top margin when there's anything above it */
-}
+  * + .paragraph {
+    margin-top: 8px; /* paragraph should have 8px top margin when there's something above it */
+  }
 
-* + .m-content-card__actions {
-  margin-top: 32px; /* actions should have 32px top margin when there's anything above it */
-}
+  * + .actions {
+    margin-top: 32px; /* actions should have 32px top margin when there's something above it */
+  }
 
-.m-content-card--text-aside {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
+  .text-container {
+    padding-bottom: 32px;
+  }
 
-.m-content-card__text--with-padding {
-  padding: 20px;
-}
+  &.text-right,
+  &.text-left {
+    .text-container {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
 
-.m-content-card--text-over {
-  display: grid;
-}
+  &.hero {
+    display: grid;
+    .img,
+    .text-container {
+      /* force them to overlap. You can also implement this with absolute position */
+      grid-row: 1;
+      grid-column: 1;
+    }
 
-.m-content-card__text--align-center {
-  align-self: center;
-  justify-self: center;
-  text-align: center;
-}
+    .text-container {
+      padding: 32px;
+    }
 
-.m-content-card--text-over .m-content-card__img,
-.m-content-card--text-over .m-content-card__text {
-  grid-column: 1;
-  grid-row: 1;
+    .heading {
+      margin-top: 0px;
+    }
+  }
+
+  @media screen and (min-width: $break-medium) {
+    &.text-right {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+    }
+
+    &.text-left {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-auto-flow: dense;
+
+      .img {
+        grid-column: 2;
+      }
+
+      .text-container {
+        grid-column: 1;
+      }
+    }
+  }
 }

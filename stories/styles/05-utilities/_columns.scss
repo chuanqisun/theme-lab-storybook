@@ -1,0 +1,12 @@
+.u-columns {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr;
+  grid-auto-columns: 1fr;
+  gap: var(--columns-gap);
+}
+
+.u-columns--three-up {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1;
+}

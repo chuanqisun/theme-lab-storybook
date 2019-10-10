@@ -1,0 +1,56 @@
+.m-content-card__img {
+  width: 100%;
+}
+
+.m-content-card__heading {
+  font: var(--hero-heading);
+}
+
+.m-content-card__paragraph {
+  font: var(--hero-paragraph);
+}
+
+* + .m-content-card__paragraph {
+  margin-top: 8px; /* paragraph should have 8px top margin when there's anything above it */
+}
+
+* + .m-content-card__actions {
+  margin-top: 32px; /* actions should have 32px top margin when there's anything above it */
+}
+
+.m-content-card--text-aside {
+  display: grid;
+  align-items: center;
+}
+
+.m-content-card--text-right {
+  grid-template-columns: 2fr 1fr;
+}
+
+.m-content-card--text-left {
+  grid-template-columns: 1fr 2fr;
+}
+
+.m-content-card__text--with-padding {
+  padding: 32px;
+}
+
+.m-content-card--text-over {
+  display: grid;
+}
+
+.m-content-card__text--align-center {
+  align-self: center;
+  justify-self: center;
+  text-align: center;
+}
+
+.m-content-card--text-over .m-content-card__img,
+.m-content-card--text-over .m-content-card__text {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.m-content-card__text--below-image {
+  margin-top: 12px;
+}
