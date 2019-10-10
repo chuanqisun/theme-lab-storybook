@@ -1,11 +1,25 @@
-@import '../../styles/index.css';
-
 .m-content-card--limit-width {
   width: 33%;
 }
 
 .m-content-card__img {
   width: 100%;
+}
+
+.m-content-card__heading {
+  font: var(--hero-heading);
+}
+
+.m-content-card__paragraph {
+  font: var(--hero-paragraph);
+}
+
+* + .m-content-card__paragraph {
+  margin-top: 8px; /* paragraph should have 8px top margin when there's anything above it */
+}
+
+* + .m-content-card__actions {
+  margin-top: 32px; /* actions should have 32px top margin when there's anything above it */
 }
 
 .m-content-card--text-aside {

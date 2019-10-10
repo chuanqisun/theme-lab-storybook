@@ -1,5 +1,5 @@
-import { html, storyFrom } from '../../utils/story-from';
-import { ContentCardHeroLayout, ContentCardCardLayout } from '../../modules/content-card/content-card.stories';
+import { html, storyFrom } from '../utils/story-from';
+import { ContentCardHeroLayout, ContentCardCardLayout } from '../modules/content-card.stories';
 import './temp.css';
 
 export default {

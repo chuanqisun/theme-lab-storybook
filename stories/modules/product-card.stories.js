@@ -1,5 +1,5 @@
-import { html, storyFrom } from '../../utils/story-from';
-import './product-card.css';
+import { html, storyFrom } from '../utils/story-from';
+import '../styles/index.scss';
 
 export default {
   title: 'Modules/Product card',
