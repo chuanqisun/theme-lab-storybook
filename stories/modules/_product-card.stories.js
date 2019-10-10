@@ -2,7 +2,7 @@ import { html, storyFrom } from '../utils/story-from';
 import '../styles/index.scss';
 
 export default {
-  title: 'Modules/Product card',
+  title: 'Modules/(wip) Product card',
 };
 
 const img = html`
