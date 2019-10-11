@@ -1,36 +1,47 @@
 @import '../02-theme/_breakpoints.scss';
 
+:root {
+  --m-content-card-heading-margin-top: 12px;
+  --m-content-card-paragraph-top-margin: 8px;
+  --m-content-card-actions-top-margin: 32px;
+  --m-content-card-text-container-padding: 32px;
+  --m-content-card-heading-font: 600 28px var(--primary-font);
+  --m-content-card-paragraph-font: 400 14px var(--primary-font);
+}
+
 .m-content-card {
   img {
     width: 100%;
   }
 
   .heading {
-    margin-top: 12px;
-    font: var(--hero-heading);
+    margin-top: var(--m-content-card-heading-margin-top);
+    font: var(--m-content-card-heading-font);
   }
 
   .paragraph {
-    font: var(--hero-paragraph);
+    font: var(--m-content-card-paragraph-font);
   }
 
+  /* paragraph should have 8px top margin when there's something above it */
   * + .paragraph {
-    margin-top: 8px; /* paragraph should have 8px top margin when there's something above it */
+    margin-top: var(--m-content-card-paragraph-top-margin);
   }
 
+  /* actions should have 32px top margin when there's something above it */
   * + .actions {
-    margin-top: 32px; /* actions should have 32px top margin when there's something above it */
+    margin-top: var(--m-content-card-actions-top-margin);
   }
 
   .text-container {
-    padding-bottom: 32px;
+    padding-bottom: var(--m-content-card-text-container-padding);
   }
 
   &.text-right,
   &.text-left {
     .text-container {
-      padding-left: 32px;
-      padding-right: 32px;
+      padding-left: var(--m-content-card-text-container-padding);
+      padding-right: var(--m-content-card-text-container-padding);
     }
   }
 
@@ -44,7 +55,7 @@
     }
 
     .text-container {
-      padding: 32px;
+      padding: var(--m-content-card-text-container-padding);
     }
 
     .heading {

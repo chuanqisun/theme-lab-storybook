@@ -1,6 +1,6 @@
 :root {
-  --message-bar-height: 40px;
-  --message-bar-bg: #c4c4c4;
+  --m-message-bar-height: 40px;
+  --m-message-bar-bg: #c4c4c4;
   --m-message-bar-interval: 3000ms;
   --m-message-bar-speed: 500ms;
   --m-message-bar-enter-timing-func: cubic-bezier(0.5, 0, 0.5, 1);
@@ -8,8 +8,8 @@
 }
 
 .m-message-bar {
-  height: var(--message-bar-height);
-  background-color: var(--message-bar-bg);
+  height: var(--m-message-bar-height);
+  background-color: var(--m-message-bar-bg);
   display: flex;
   align-items: center;
   justify-content: center;
