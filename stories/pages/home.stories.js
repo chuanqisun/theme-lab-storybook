@@ -1,5 +1,6 @@
 import { html, storyFrom } from '../utils/story-from';
 import { ContentCardHeroLayout, ContentCardCardLayout } from '../modules/content-card.stories';
+import { MessageBar } from '../modules/message-bar.stories';
 import './temp.css';
 
 export default {
@@ -7,7 +8,7 @@ export default {
 };
 
 export const basic = storyFrom(html`
-  <div class="m-info-bar">Info bar message</div>
+  ${MessageBar()}
   <header class="m-header">
     <img class="m-header__logo" src="https://via.placeholder.com/160X48" />
     <button>Search</button><a href="#">Account</a><a href="#">Wishlist</a>&nbsp;|&nbsp;<a href="#">Cart (0)</a>
