@@ -1,6 +1,6 @@
 import { html, storyFrom } from '../utils/story-from';
 import { ContentCardHeroLayout, ContentCardCardLayout } from '../modules/content-card.stories';
-import { MessageBar } from '../modules/message-bar.stories';
+import { MessageBar } from '../modules/message-bar/message-bar.stories';
 import './temp.css';
 
 export default {

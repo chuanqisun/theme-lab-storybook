@@ -52,7 +52,7 @@ export const ContentCardFeatureTextRight = (data = contentCardFeatureData) => {
         <div class="actions">
           ${data.actions.map(
             action => html`
-              <a href="#">${action}</a>
+              <a href="#" class="c-btn">${action}</a>
             `
           )}
         </div>
@@ -71,7 +71,7 @@ export const ContentCardFeatureTextLeft = (data = contentCardFeatureData) => {
         <div class="actions">
           ${data.actions.map(
             action => html`
-              <a href="#">${action}</a>
+              <a href="#" class="c-btn">${action}</a>
             `
           )}
         </div>
@@ -89,7 +89,7 @@ export const ContentCardHeroLayout = (data = contentCardHeroData) => html`
       <div class="actions">
         ${data.actions.map(
           action => html`
-            <a href="#">${action}</a>
+            <a href="#" class="c-btn">${action}</a>
           `
         )}
       </div>

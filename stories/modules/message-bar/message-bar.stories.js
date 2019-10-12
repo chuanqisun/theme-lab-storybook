@@ -1,10 +1,12 @@
-import { html, storyFrom } from '../utils/story-from';
+import { html, storyFrom } from '../../utils/story-from';
 import { messageBarDefaultData, messageBarMultiMessageData } from './message-bar.data';
-import '../styles/index.scss';
+import '../../styles/index.scss';
+import notes from './message-bar.md';
 
 export default {
   title: 'Modules/Message bar',
-  includeStories: ['singleMessage', 'multiMessage'],
+  includeStories: ['singleMessage', 'multiMessage', 'testMessage'],
+  parameters: { notes },
 };
 
 export const MessageBar = (data = messageBarDefaultData) => html`
@@ -25,11 +27,4 @@ export const MessageBarMultiMessage = (data = messageBarMultiMessageData) => htm
 `;
 
 export const singleMessage = storyFrom(MessageBar());
-export const multiMessage = storyFrom(html`
-  <div class="demo-notes">
-    1. The html in this demo is not accessible. Please consult SME for implementation. <br />
-    2. For demo purposes, the slide duration is 3 seconds. In production, use 5 seconds at least to provide more reading time.<br />
-    3. Animation should be paused once user hovers on the message bar. This behavior is not demoed here.
-  </div>
-  ${MessageBarMultiMessage()}
-`);
+export const multiMessage = storyFrom(MessageBarMultiMessage());
