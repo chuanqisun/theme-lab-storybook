@@ -1,0 +1,101 @@
+@import '../00-variables/_breakpoints.scss';
+@import '../00-variables/_typography.scss';
+
+$m-hero-pre-body-margin: 8px;
+$m-hero-text-container-padding: 32px;
+$m-hero-heading-font-weight: 600;
+$m-hero-heading-font-size: 28px;
+$m-hero-heading-font-family: $primary-font-family;
+$m-hero-body-font-weight: 400;
+$m-hero-body-font-size: 14px;
+$m-hero-body-font-family: $primary-font-family;
+$m-hero-pre-links-margin: 32px;
+$m-hero-post-link-margin: 16px;
+
+.m-hero {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  .text-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .heading {
+    font-weight: $m-hero-heading-font-weight;
+    font-size: $m-hero-heading-font-size;
+    font-family: $m-hero-heading-font-family;
+  }
+
+  .paragraph {
+    font-weight: $m-hero-body-font-weight;
+    font-size: $m-hero-body-font-size;
+    font-family: $m-hero-body-font-family;
+  }
+
+  /* paragraph should have 8px top margin when there's something above it */
+  * + .paragraph {
+    margin-top: $m-hero-pre-body-margin;
+  }
+
+  /* links should have 32px top margin when there's something above it */
+  * + .links-container {
+    margin-top: $m-hero-pre-links-margin;
+  }
+
+  .text-container {
+    padding: $m-hero-text-container-padding;
+    display: flex;
+    flex-direction: column;
+
+    &.left,
+    &.center,
+    &.right {
+      justify-content: center;
+    }
+
+    &.bottom-left,
+    &.bottom,
+    &.bottom-right {
+      justify-content: flex-end;
+    }
+
+    &.top,
+    &.center,
+    &.bottom {
+      align-items: center;
+      text-align: center;
+    }
+
+    &.top-right,
+    &.right,
+    &.bottom-right {
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+
+  .c-btn {
+    width: 100%;
+  }
+
+  .c-btn + .c-btn {
+    margin-left: 0;
+    margin-top: 16px;
+  }
+
+  @media screen and (min-width: $break-medium) {
+    .c-btn {
+      width: auto;
+    }
+    .c-btn + .c-btn {
+      margin-left: $m-hero-post-link-margin;
+    }
+  }
+}
