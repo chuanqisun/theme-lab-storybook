@@ -1,0 +1,70 @@
+@import '../00-variables/_colors.scss';
+@import '../00-variables/_typography.scss';
+
+$m-message-bar-font-family: $primary-font-family;
+$m-message-bar-height: 48px;
+$m-message-bar-side-padding: 16px;
+$m-message-bar-bg: $gray;
+$m-message-bar-speed: 500ms;
+$m-message-bar-enter-timing-func: cubic-bezier(0.5, 0, 0.5, 1);
+$m-message-bar-exit-timing-func: cubic-bezier(0.5, 0, 0.5, 1);
+$m-message-bar-animation-distance: 80px;
+$m-message-bar-line-height: 1.2;
+
+.m-message-bar {
+  height: $m-message-bar-height;
+  background-color: $m-message-bar-bg;
+  position: relative;
+  overflow: hidden;
+
+  .message {
+    font-family: $m-message-bar-font-family;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 $m-message-bar-side-padding;
+    align-items: center;
+    justify-content: center;
+    will-change: transform;
+    line-height: $m-message-bar-line-height;
+
+    &.entering {
+      display: flex;
+      animation: enter $m-message-bar-speed $m-message-bar-enter-timing-func both;
+    }
+
+    &.leaving {
+      display: flex;
+      animation: exit $m-message-bar-speed $m-message-bar-exit-timing-func both;
+    }
+
+    &.static {
+      display: flex;
+    }
+  }
+}
+
+@keyframes exit {
+  from {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-$m-message-bar-animation-distance, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes enter {
+  from {
+    transform: translate($m-message-bar-animation-distance, 0);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}

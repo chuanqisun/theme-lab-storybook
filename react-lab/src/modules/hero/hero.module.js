@@ -11,8 +11,8 @@ export const Hero = ({
 }) => (
   <div className="m-hero">
     <picture>
-      {image.sources.map(source => (
-        <source media={source.media} srcSet={source.srcSet} />
+      {image.sources.map((source, i) => (
+        <source key={i} media={source.media} srcSet={source.srcSet} />
       ))}
       <img className="img" src={image.src} srcSet={image.srcSet} />
     </picture>
