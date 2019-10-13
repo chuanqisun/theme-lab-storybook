@@ -16,21 +16,41 @@ $m-hero-body-max-length: 30em;
 $m-hero-pre-links-margin: 32px;
 $m-hero-post-link-margin: 16px;
 
-.m-hero {
-  position: relative;
-
-  img {
-    min-width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
+@mixin overlay-text-on-image {
   .text-container {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: 100%;
+  }
+}
+
+.m-hero {
+  position: relative;
+
+  img {
+    min-width: 100%;
+  }
+
+  /**
+   * Text over image by default only in modern browsers.
+   * We must reflow the text to bottom in IE 11 because it doesn't support srcset and the image will be too short to put text over it.
+   */
+  @supports (object-fit: cover) {
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include overlay-text-on-image;
+  }
+
+  /**
+   * When the image is tall enough for IE 11 to display text on top of it. 
+   */
+  @media screen and (min-width: 900px) {
+    @include overlay-text-on-image;
   }
 
   .heading {
@@ -100,7 +120,7 @@ $m-hero-post-link-margin: 16px;
     margin-top: 16px;
   }
 
-  @media screen and (min-width: 600px) {
+  @media screen and (min-width: 500px) {
     .c-btn {
       width: auto;
     }
