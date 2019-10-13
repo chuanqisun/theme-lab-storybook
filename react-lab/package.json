@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "start-storybook -p 6006"
+    "start": "start-storybook -p 6006",
+    "build": "build-storybook"
   },
   "keywords": [],
   "author": "",
