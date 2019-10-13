@@ -1,20 +1,27 @@
+@import '../00-variables/_colors.scss';
 @import '../00-variables/_typography.scss';
 
-$c-btn-primary-color: #fff;
-$c-btn-primary-bg: #6082ab;
+$c-btn-primary-color: $white;
+$c-btn-primary-bg: $blue;
+$c-btn-min-width: 160px;
+$c-btn-side-padding: 12px;
+$c-btn-height: 48px;
 
 a.c-btn {
-  display: inline-block;
+  display: inline-flex;
   text-decoration: none;
 }
 
 .c-btn {
-  font-family: $primary-font-family;
-  color: $c-btn-primary-color;
+  align-items: center;
   background-color: $c-btn-primary-bg;
-  padding: 12px;
   border: none;
+  color: $c-btn-primary-color;
   cursor: pointer;
-  min-width: 160px;
-  text-align: center;
+  display: inline-flex;
+  font-family: $primary-font-family;
+  height: $c-btn-height;
+  justify-content: center;
+  min-width: $c-btn-min-width;
+  padding: 0 $c-btn-side-padding;
 }

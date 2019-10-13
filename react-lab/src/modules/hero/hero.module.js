@@ -17,15 +17,17 @@ export const Hero = ({
       <img className="img" src={image.src} srcSet={image.srcSet} />
     </picture>
     <div className={`text-container ${textAlignment}`}>
-      <h2 className="heading">{title}</h2>
-      <p className="paragraph">{body}</p>
-      <div className="links-container">
-        {links.map(link => (
-          <a className="c-btn" key={link.label} href="javascript:void(0)">
-            {link.label}
-          </a>
-        ))}
-      </div>
+      {title && <h2 className="heading">{title}</h2>}
+      {body && <p className="paragraph">{body}</p>}
+      {links && links.length > 0 && (
+        <div className="links-container">
+          {links.map(link => (
+            <a className="c-btn" key={link} href="javascript:void(0)">
+              {link}
+            </a>
+          ))}
+        </div>
+      )}
     </div>
   </div>
 );
