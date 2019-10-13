@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { messageBarData, messageBarDataMultiple, knobify } from './message-bar.data';
 import notes from './message-bar.notes.md';
 
-export default { title: 'Module/Message bar', decorators: [withKnobs], parameters: { notes } };
+export default { title: 'Modules/Message bar', decorators: [withKnobs], parameters: { notes } };
 
 import { MessageBar } from './message-bar.module';
 

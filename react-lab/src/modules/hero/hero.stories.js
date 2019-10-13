@@ -3,7 +3,7 @@ import { withKnobs } from '@storybook/addon-knobs';
 import { heroData, heroDataMultiLink, knobify, heroDataBodyless, heroDataLinksOnly } from './hero.data';
 import notes from './hero.notes.md';
 
-export default { title: 'Module/Hero', decorators: [withKnobs], parameters: { notes } };
+export default { title: 'Modules/Hero', decorators: [withKnobs], parameters: { notes } };
 
 import { Hero } from './hero.module';
 
