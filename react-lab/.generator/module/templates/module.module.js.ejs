@@ -1,0 +1,9 @@
+import React from 'react';
+import { <%= camelName%>Data } from './<%= kebabName%>.data';
+
+export const <%= pascalName%> = ({
+  body = <%= camelName%>Data.body,
+  ...props
+}) => (
+  <div className="m-<%= kebabName%>">{body}</div>
+);

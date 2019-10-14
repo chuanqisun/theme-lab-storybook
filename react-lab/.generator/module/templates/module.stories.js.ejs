@@ -1,0 +1,9 @@
+import { withKnobs } from '@storybook/addon-knobs';
+import React from 'react';
+import { <%= camelName%>Data, knobify } from './<%= kebabName%>.data';
+import { <%= pascalName%> } from './<%= kebabName%>.module';
+import notes from './<%= kebabName%>.notes.md';
+
+export default { title: 'Modules/<%= displayName%>', decorators: [withKnobs], parameters: { notes } };
+
+export const basic = () => <<%= pascalName%> {...knobify(<%= camelName%>Data)} />;

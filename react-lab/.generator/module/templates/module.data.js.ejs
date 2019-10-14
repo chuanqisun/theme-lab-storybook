@@ -1,0 +1,10 @@
+import { text } from '@storybook/addon-knobs';
+
+export const <%= camelName%>Data = {
+  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+};
+
+
+export const knobify = (data = <%= camelName%>Data) => ({
+  body: text('Body', data.body),
+});
