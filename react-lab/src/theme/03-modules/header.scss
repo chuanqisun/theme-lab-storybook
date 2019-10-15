@@ -1,0 +1,7 @@
+@import '../00-variables/index';
+
+$m-header-font-family : $primary-font-family;
+
+.m-header {
+  font-family: $m-header-font-family;
+}
