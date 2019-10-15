@@ -1,6 +1,6 @@
 @import '../00-abstracts/index';
 
-$m-header-font-family: $primary-font-family;
+$m-header-font-family: $a-primary-font-family;
 $m-header-category-gap: 24px;
 $m-header-toolbar-items-gap: 8px;
 $m-header-top-padding: 20px;
@@ -12,7 +12,7 @@ $m-header-nav-top-margin: 32px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: $m-header-top-padding $side-padding-l $m-header-bottom-padding;
+  padding: $m-header-top-padding $a-side-padding-l $m-header-bottom-padding;
 
   .logo {
     margin-right: auto;

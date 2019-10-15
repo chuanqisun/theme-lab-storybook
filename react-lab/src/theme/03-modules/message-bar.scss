@@ -1,9 +1,9 @@
 @import '../00-abstracts/index.scss';
 
-$m-message-bar-font-family: $primary-font-family;
+$m-message-bar-font-family: $a-primary-font-family;
 $m-message-bar-height: 48px;
 $m-message-bar-side-padding: 16px;
-$m-message-bar-bg: $gray;
+$m-message-bar-bg: $a-gray;
 $m-message-bar-speed: 500ms;
 $m-message-bar-enter-timing-func: cubic-bezier(0.5, 0, 0.5, 1);
 $m-message-bar-exit-timing-func: cubic-bezier(0.5, 0, 0.5, 1);
