@@ -6,14 +6,14 @@ $m-feature-gutter: 32px;
 $m-feature-link-right-margin: 16px;
 $m-feature-links-top-margin: 32px;
 $m-feature-reflow-breakpoint: $a-breakpoint-m;
-$m-feautre-side-padding-desktop: $a-side-padding-xl;
-$m-feautre-side-padding-desktop-reduced: $a-side-padding-l;
+$m-feautre-side-padding-desktop: $a-page-side-padding-xl;
+$m-feautre-side-padding-desktop-narrow: $a-page-side-padding-l;
 $m-feature-text-container-padding-mobile: 32px;
 $m-feature-text-container-padding-desktop: 0; // relying on grid gutter and module side padding
 $m-feature-increase-padding-breakpoint: $a-breakpoint-l;
 
 .m-feature {
-  lost-utility: clearfix;
+  lost-utility: clearfix; // Lost grid uses float. Use clearfix to achieve correct element height
   font-family: $m-feature-font-family;
 
   /* paragraph should have top margin only when there's something above it */
@@ -36,7 +36,7 @@ $m-feature-increase-padding-breakpoint: $a-breakpoint-l;
 
   @media screen and (min-width: $m-feature-reflow-breakpoint) {
     & {
-      padding: 0 $m-feautre-side-padding-desktop-reduced;
+      padding: 0 $m-feautre-side-padding-desktop-narrow;
     }
 
     .img {
