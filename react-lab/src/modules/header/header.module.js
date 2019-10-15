@@ -18,7 +18,7 @@ export const Header = ({ logo = headerData.logo, account = headerData.account, c
       Wishlist
     </a>
     <a className="cart" href="javascript:void(0)">
-      Cart {cart.itemCount}
+      Cart ({cart.itemCount})
     </a>
     <nav className="nav">
       <ul className="nav-ul">
