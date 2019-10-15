@@ -36,11 +36,10 @@ export const heroDataLinksOnly = {
 };
 
 export const knobify = (data = heroData) => ({
+  ...data,
   title: text('Title', data.title),
   body: text('Body', data.body),
   links: array('Links', data.links),
-  imageSrc: data.image.src, // Dimensions from media server. Not adjustable by author.
-  imageSources: data.image.sources, // Dimensions from media server. Not adjustable by author.
   textAlignment: select(
     'Text alignment',
     ['top-left', 'top', 'top-right', 'left', 'center', 'right', 'bottom-left', 'bottom', 'bottom-right'],
