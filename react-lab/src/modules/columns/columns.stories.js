@@ -1,6 +1,6 @@
 import { withKnobs } from '@storybook/addon-knobs';
 import React from 'react';
-import { columnsData, columnsData1To1To1, knobify, columnsData1To2, columnsData2To1 } from './columns.data';
+import { columnsData, columnsData1To1To1, knobify, columnsData1To2, columnsData2To1, columnsDataFullBleed } from './columns.data';
 import { Columns } from './columns.module';
 import notes from './columns.notes.md';
 
@@ -16,14 +16,6 @@ export const ratio1To1 = () => (
   </Columns>
 );
 
-export const ratio1To1To1 = () => (
-  <Columns {...knobify(columnsData1To1To1)}>
-    <div>{sampleText}</div>
-    <div>{sampleText}</div>
-    <div>{sampleText}</div>
-  </Columns>
-);
-
 export const ratio1To2 = () => (
   <Columns {...knobify(columnsData1To2)}>
     <div>{sampleText}</div>
@@ -33,6 +25,21 @@ export const ratio1To2 = () => (
 
 export const ratio2To1 = () => (
   <Columns {...knobify(columnsData2To1)}>
+    <div>{sampleText}</div>
+    <div>{sampleText}</div>
+  </Columns>
+);
+
+export const ratio1To1To1 = () => (
+  <Columns {...knobify(columnsData1To1To1)}>
+    <div>{sampleText}</div>
+    <div>{sampleText}</div>
+    <div>{sampleText}</div>
+  </Columns>
+);
+
+export const fullBleed = () => (
+  <Columns {...knobify(columnsDataFullBleed)}>
     <div>{sampleText}</div>
     <div>{sampleText}</div>
   </Columns>

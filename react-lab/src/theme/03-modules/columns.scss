@@ -1,6 +1,17 @@
 @import '../00-abstracts/index';
 
 .m-columns {
+  lost-utility: clearfix; // Lost grid uses float. Use clearfix to achieve correct element height
+
+  padding: 0 160px;
+  max-width: 1280px;
+  margin: auto;
+
+  &.full-bleed {
+    padding: 0;
+    max-width: none;
+  }
+
   &.ratio-1-1 > * {
     lost-column: 1/2;
   }
