@@ -1,0 +1,9 @@
+@import '../00-abstracts/index';
+
+$m-container-module-background : $a-black;
+$m-container-module-color : $a-white;
+
+.m-container {
+  color: $m-container-module-color;
+  background-color: $m-container-module-background;
+}

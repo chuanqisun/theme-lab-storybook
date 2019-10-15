@@ -14,6 +14,7 @@ $m-feature-module-increase-padding-breakpoint: $a-breakpoint-l;
 $m-feature-module-reflow-breakpoint: $a-breakpoint-m;
 $m-feature-text-container-padding-desktop: 0; // relying on grid gutter and module side padding
 $m-feature-text-container-padding-mobile: 32px;
+$m-feature-text-container-side-padding-full-bleed: 32px; // to prevent text from touching screen edge
 $m-feautre-side-padding-desktop-narrow: $a-page-side-padding-l;
 $m-feautre-side-padding-desktop: $a-page-side-padding-xl;
 
@@ -55,6 +56,20 @@ $m-feautre-side-padding-desktop: $a-page-side-padding-xl;
       padding: 0 $m-feautre-side-padding-desktop-narrow;
     }
 
+    &.full-bleed {
+      padding: 0;
+
+      .text-container {
+        padding-right: $m-feature-text-container-side-padding-full-bleed;
+      }
+
+      &.text-left {
+        .text-container {
+          padding-left: $m-feature-text-container-side-padding-full-bleed;
+        }
+      }
+    }
+
     .img {
       lost-column: 2/3 2 $m-feature-image-to-text-gutter;
     }
@@ -86,6 +101,10 @@ $m-feautre-side-padding-desktop: $a-page-side-padding-xl;
   @media screen and (min-width: $m-feature-module-increase-padding-breakpoint) {
     & {
       padding: 0 $m-feautre-side-padding-desktop;
+    }
+
+    &.full-bleed {
+      padding: 0;
     }
   }
 }
