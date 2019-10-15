@@ -47,17 +47,6 @@ module.exports = class extends Generator {
     this.fs.copyTpl(this.templatePath('./_module.scss.ejs'), this.destinationPath(`./src/theme/03-modules/_${this.kebabName}.scss`), {
       kebabName: this.kebabName,
     });
-
-    //   this.fs.copy('./src/theme/index.scss', './src/theme/index.scss', {
-    //     process: function(content) {
-
-    //         /* Any modification goes here. Note that contents is a Buffer object */
-
-    //         var regEx = new RegExp('old string', 'g');
-    //         var newContent = content.toString().replace(regEx, 'new string');
-    //         return newContent;
-    //     }
-    // });
   }
 };
 

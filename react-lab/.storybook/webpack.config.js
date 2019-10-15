@@ -1,4 +1,5 @@
 const path = require('path');
+const globImporter = require('node-sass-glob-importer');
 
 module.exports = async ({ config, mode }) => {
   config.module.rules.push({
@@ -15,7 +16,14 @@ module.exports = async ({ config, mode }) => {
           },
         },
       },
-      'sass-loader',
+      {
+        loader: 'sass-loader',
+        options: {
+          sassOptions: {
+            importer: globImporter(),
+          },
+        },
+      },
     ],
     include: path.resolve(__dirname, '../'),
   });

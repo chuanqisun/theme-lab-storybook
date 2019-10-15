@@ -1,6 +1,3 @@
 @import './01-global/reset';
-
-@import './02-components/button';
-
-@import './03-modules/hero';
-@import './03-modules/message-bar';
+@import './02-components/**/*.scss';
+@import './03-modules/**/*.scss';
