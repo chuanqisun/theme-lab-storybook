@@ -1,19 +1,19 @@
 @import '../00-abstracts/index.scss';
 
 $m-hero-body-color: $a-black;
-$m-hero-body-font-family: $a-primary-font-family;
 $m-hero-body-font-size: 14px;
 $m-hero-body-font-weight: 400;
 $m-hero-body-max-length: 30em;
 $m-hero-body-top-margin: 8px;
 $m-hero-heading-color: $a-black;
-$m-hero-heading-font-family: $a-primary-font-family;
 $m-hero-heading-font-size: 28px;
 $m-hero-heading-font-weight: 600;
 $m-hero-heading-max-length: 30em;
 $m-hero-link-right-margin: 16px;
-$m-hero-links-top-margin: 32px;
 $m-hero-links-reflow-breakpoint: $a-breakpoint-m;
+$m-hero-links-top-margin: 32px;
+$m-hero-module-height: 500px;
+$m-hero-module-reflow-breakpoint: $a-breakpoint-l;
 $m-hero-text-container-padding: 32px;
 
 @mixin overlay-text-on-image {
@@ -39,7 +39,7 @@ $m-hero-text-container-padding: 32px;
    */
   @supports (object-fit: cover) {
     img {
-      height: 100%;
+      height: $m-hero-module-height;
       object-fit: cover;
     }
 
@@ -49,7 +49,7 @@ $m-hero-text-container-padding: 32px;
   /**
    * When the image is tall enough for IE 11 to display text on top of it. 
    */
-  @media screen and (min-width: 900px) {
+  @media screen and (min-width: $m-hero-module-reflow-breakpoint) {
     @include overlay-text-on-image;
   }
 
@@ -57,7 +57,6 @@ $m-hero-text-container-padding: 32px;
     color: $m-hero-heading-color;
     font-weight: $m-hero-heading-font-weight;
     font-size: $m-hero-heading-font-size;
-    font-family: $m-hero-heading-font-family;
     max-width: $m-hero-heading-max-length;
   }
 
@@ -65,7 +64,6 @@ $m-hero-text-container-padding: 32px;
     color: $m-hero-body-color;
     font-weight: $m-hero-body-font-weight;
     font-size: $m-hero-body-font-size;
-    font-family: $m-hero-body-font-family;
     max-width: $m-hero-body-max-length;
   }
 
