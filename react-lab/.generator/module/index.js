@@ -44,7 +44,7 @@ module.exports = class extends Generator {
       pascalName: this.pascalName,
     });
 
-    this.fs.copyTpl(this.templatePath('./_module.scss.ejs'), this.destinationPath(`./src/theme/03-modules/_${this.kebabName}.scss`), {
+    this.fs.copyTpl(this.templatePath('./module.scss.ejs'), this.destinationPath(`./src/theme/03-modules/${this.kebabName}.scss`), {
       kebabName: this.kebabName,
     });
   }
