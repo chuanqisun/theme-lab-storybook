@@ -13,6 +13,7 @@ $m-hero-heading-font-weight: 600;
 $m-hero-heading-max-length: 30em;
 $m-hero-link-right-margin: 16px;
 $m-hero-links-top-margin: 32px;
+$m-hero-links-reflow-breakpoint: $a-breakpoint-m;
 $m-hero-text-container-padding: 32px;
 
 @mixin overlay-text-on-image {
@@ -119,7 +120,7 @@ $m-hero-text-container-padding: 32px;
     margin-top: 16px;
   }
 
-  @media screen and (min-width: 500px) {
+  @media screen and (min-width: $m-hero-links-reflow-breakpoint) {
     .c-btn {
       width: auto;
     }

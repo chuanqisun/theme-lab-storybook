@@ -1,0 +1,15 @@
+@import '../00-abstracts/index';
+
+$m-spacer-size-desktop: $a-vertical-gutter-base-unit-desktop;
+$m-spacer-size-mobile: $a-vertical-gutter-base-unit-mobile;
+$m-spacer-shrink-breakpoint: $a-breakpoint-m;
+
+.m-spacer {
+  height: $a-vertical-gutter-base-unit-mobile;
+
+  @media screen and (min-width: $m-spacer-shrink-breakpoint) {
+    & {
+      height: $m-spacer-size-desktop;
+    }
+  }
+}

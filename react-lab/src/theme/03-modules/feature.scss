@@ -5,12 +5,15 @@ $m-feature-font-family: $a-primary-font-family;
 $m-feature-gutter: 32px;
 $m-feature-link-right-margin: 16px;
 $m-feature-links-top-margin: 32px;
-$m-feature-reflow-breakpoint: 600px;
+$m-feature-reflow-breakpoint: $a-breakpoint-m;
 $m-feautre-side-padding-desktop: $a-side-padding-xl;
+$m-feautre-side-padding-desktop-reduced: $a-side-padding-l;
 $m-feature-text-container-padding-mobile: 32px;
 $m-feature-text-container-padding-desktop: 0; // relying on grid gutter and module side padding
+$m-feature-increase-padding-breakpoint: $a-breakpoint-l;
 
 .m-feature {
+  lost-utility: clearfix;
   font-family: $m-feature-font-family;
 
   /* paragraph should have top margin only when there's something above it */
@@ -27,9 +30,13 @@ $m-feature-text-container-padding-desktop: 0; // relying on grid gutter and modu
     padding: $m-feature-text-container-padding-mobile;
   }
 
+  .c-btn {
+    width: 100%;
+  }
+
   @media screen and (min-width: $m-feature-reflow-breakpoint) {
     & {
-      padding: 0 $m-feautre-side-padding-desktop;
+      padding: 0 $m-feautre-side-padding-desktop-reduced;
     }
 
     .img {
@@ -57,6 +64,12 @@ $m-feature-text-container-padding-desktop: 0; // relying on grid gutter and modu
     .c-btn + .c-btn {
       margin-top: 0;
       margin-left: $m-feature-link-right-margin;
+    }
+  }
+
+  @media screen and (min-width: $m-feature-increase-padding-breakpoint) {
+    & {
+      padding: 0 $m-feautre-side-padding-desktop;
     }
   }
 }
