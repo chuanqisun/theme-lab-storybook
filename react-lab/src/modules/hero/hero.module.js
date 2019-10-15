@@ -2,7 +2,7 @@ import React from 'react';
 import { heroData } from './hero.data';
 
 export const Hero = ({
-  title = heroData.title,
+  heading = heroData.heading,
   body = heroData.body,
   links = heroData.links,
   image = heroData.image,
@@ -17,7 +17,7 @@ export const Hero = ({
       <img className="img" src={image.src} srcSet={image.srcSet} />
     </picture>
     <div className={`text-container ${textAlignment}`}>
-      {title && <h2 className="heading">{title}</h2>}
+      {heading && <h2 className="heading">{heading}</h2>}
       {body && <p className="body">{body}</p>}
       {links && links.length > 0 && (
         <div className="links-container">

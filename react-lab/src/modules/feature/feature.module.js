@@ -2,7 +2,7 @@ import React from 'react';
 import { featureData } from './feature.data';
 
 export const Feature = ({
-  title = featureData.title,
+  heading = featureData.heading,
   body = featureData.body,
   links = featureData.links,
   image = featureData.image,
@@ -17,7 +17,7 @@ export const Feature = ({
       <img className="img" src={image.src} srcSet={image.srcSet} />
     </picture>
     <div className="text-container">
-      {title && <h2 className="heading">{title}</h2>}
+      {heading && <h2 className="heading">{heading}</h2>}
       {body && <p className="body">{body}</p>}
       {links && links.length > 0 && (
         <div className="links-container">
