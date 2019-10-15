@@ -60,15 +60,15 @@ $m-hero-text-container-padding: 32px;
     max-width: $m-hero-heading-max-length;
   }
 
-  .paragraph {
+  .body {
     color: $m-hero-body-color;
     font-weight: $m-hero-body-font-weight;
     font-size: $m-hero-body-font-size;
     max-width: $m-hero-body-max-length;
   }
 
-  /* paragraph should have top margin only when there's something above it */
-  * + .paragraph {
+  /* body should have top margin only when there's something above it */
+  * + .body {
     margin-top: $m-hero-body-top-margin;
   }
 

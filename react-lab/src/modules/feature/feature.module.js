@@ -18,7 +18,7 @@ export const Feature = ({
     </picture>
     <div className="text-container">
       {title && <h2 className="heading">{title}</h2>}
-      {body && <p className="paragraph">{body}</p>}
+      {body && <p className="body">{body}</p>}
       {links && links.length > 0 && (
         <div className="links-container">
           {links.map(link => (

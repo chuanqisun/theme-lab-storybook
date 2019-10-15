@@ -1,21 +1,27 @@
 @import '../00-abstracts/index';
 
+$m-feature-body-color: $a-black;
+$m-feature-body-font-size: 14px;
+$m-feature-body-font-weight: 400;
 $m-feature-body-top-margin: 8px;
+$m-feature-heading-color: $a-black;
+$m-feature-heading-font-size: 28px;
+$m-feature-heading-font-weight: 600;
 $m-feature-image-to-text-gutter: 32px;
 $m-feature-link-right-margin: 16px;
 $m-feature-links-top-margin: 32px;
-$m-feature-module-reflow-breakpoint: $a-breakpoint-m;
-$m-feautre-side-padding-desktop: $a-page-side-padding-xl;
-$m-feautre-side-padding-desktop-narrow: $a-page-side-padding-l;
-$m-feature-text-container-padding-mobile: 32px;
-$m-feature-text-container-padding-desktop: 0; // relying on grid gutter and module side padding
 $m-feature-module-increase-padding-breakpoint: $a-breakpoint-l;
+$m-feature-module-reflow-breakpoint: $a-breakpoint-m;
+$m-feature-text-container-padding-desktop: 0; // relying on grid gutter and module side padding
+$m-feature-text-container-padding-mobile: 32px;
+$m-feautre-side-padding-desktop-narrow: $a-page-side-padding-l;
+$m-feautre-side-padding-desktop: $a-page-side-padding-xl;
 
 .m-feature {
   lost-utility: clearfix; // Lost grid uses float. Use clearfix to achieve correct element height
 
-  /* paragraph should have top margin only when there's something above it */
-  * + .paragraph {
+  /* body should have top margin only when there's something above it */
+  * + .body {
     margin-top: $m-feature-body-top-margin;
   }
 
@@ -26,6 +32,18 @@ $m-feature-module-increase-padding-breakpoint: $a-breakpoint-l;
 
   .text-container {
     padding: $m-feature-text-container-padding-mobile;
+  }
+
+  .heading {
+    color: $m-feature-heading-color;
+    font-weight: $m-feature-heading-font-weight;
+    font-size: $m-feature-heading-font-size;
+  }
+
+  .body {
+    color: $m-feature-body-color;
+    font-weight: $m-feature-body-font-weight;
+    font-size: $m-feature-body-font-size;
   }
 
   .c-btn {

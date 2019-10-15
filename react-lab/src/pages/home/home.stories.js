@@ -13,7 +13,6 @@ export const Home = () => (
     <Header />
     <Hero />
     <Spacer />
-    <Spacer />
     <Feature />
     <Spacer />
     <Feature {...featureDataTextLeft} />
