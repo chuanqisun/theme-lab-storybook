@@ -1,6 +1,10 @@
-import { text, boolean } from '@storybook/addon-knobs';
+import { boolean } from '@storybook/addon-knobs';
 
 export const containerData = {
+  fullBleed: true,
+};
+
+export const containerDataClamped = {
   fullBleed: false,
 };
 

@@ -7,10 +7,9 @@ export const Feature = ({
   links = featureData.links,
   image = featureData.image,
   layout = featureData.layout,
-  fullBleed = featureData.fullBleed,
   ...props
 }) => (
-  <div className={`m-feature ${layout}${fullBleed ? ' full-bleed' : ''}`}>
+  <div className={`m-feature ${layout}`}>
     <picture>
       {image.sources.map((source, i) => (
         <source key={i} media={source.media} srcSet={source.srcSet} />

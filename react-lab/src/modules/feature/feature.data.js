@@ -10,7 +10,6 @@ export const featureData = {
   body:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   links: ['Shop now'],
-  fullBleed: false,
 };
 
 export const featureDataTextLeft = {
@@ -18,14 +17,8 @@ export const featureDataTextLeft = {
   layout: 'text-left',
 };
 
-export const featureDataFullBleed = {
-  ...featureData,
-  fullBleed: true,
-};
-
 export const knobify = (data = featureData) => ({
   ...data,
   heading: text('Heading', data.heading),
   layout: select('Layout', ['text-right', 'text-left'], data.layout),
-  fullBleed: boolean('Full bleed', data.fullBleed),
 });

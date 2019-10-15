@@ -2,7 +2,7 @@ import { select, boolean } from '@storybook/addon-knobs';
 
 export const columnsData = {
   layout: '1:1',
-  fullBleed: false,
+  fullBleed: true,
 };
 
 export const columnsData1To2 = {
@@ -20,9 +20,9 @@ export const columnsData1To1To1 = {
   layout: '1:1:1',
 };
 
-export const columnsDataFullBleed = {
+export const columnsDataClamped = {
   ...columnsData,
-  fullBleed: true,
+  fullBleed: false,
 };
 
 export const knobify = (data = columnsData) => ({

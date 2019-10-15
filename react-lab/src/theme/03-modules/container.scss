@@ -5,9 +5,12 @@ $m-container-module-side-padding-l: $a-page-side-padding-l;
 $m-container-module-side-padding-xl: $a-page-side-padding-xl;
 $m-container-module-s-to-l-breakpoint: $a-breakpoint-m;
 $m-container-module-l-to-xl-breakpoint: $a-breakpoint-l;
+$m-container-module-clamped-width: $a-page-section-clamped-width;
 
 .m-container {
   padding: 0 $m-container-module-side-padding-s;
+  max-width: $m-container-module-clamped-width;
+  margin: auto;
 
   @media screen and (min-width: $m-container-module-s-to-l-breakpoint) {
     padding: 0 $m-container-module-side-padding-l;
@@ -19,5 +22,6 @@ $m-container-module-l-to-xl-breakpoint: $a-breakpoint-l;
 
   &.full-bleed {
     padding: 0;
+    max-width: none;
   }
 }

@@ -1,6 +1,6 @@
 import { withKnobs } from '@storybook/addon-knobs';
 import React from 'react';
-import { columnsData, columnsData1To1To1, knobify, columnsData1To2, columnsData2To1, columnsDataFullBleed } from './columns.data';
+import { columnsData, columnsData1To1To1, knobify, columnsData1To2, columnsData2To1, columnsDataClamped } from './columns.data';
 import { Columns } from './columns.module';
 import notes from './columns.notes.md';
 
@@ -38,8 +38,8 @@ export const ratio1To1To1 = () => (
   </Columns>
 );
 
-export const fullBleed = () => (
-  <Columns {...knobify(columnsDataFullBleed)}>
+export const clamped = () => (
+  <Columns {...knobify(columnsDataClamped)}>
     <div>{sampleText}</div>
     <div>{sampleText}</div>
   </Columns>
