@@ -1,10 +1,23 @@
-import { text } from '@storybook/addon-knobs';
+import { text, select } from '@storybook/addon-knobs';
 
 export const featureData = {
-  body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+  image: {
+    src: 'https://via.placeholder.com/728X432',
+    sources: [],
+  },
+  layout: 'text-right',
+  title: 'Heading',
+  body:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  links: ['Shop now'],
 };
 
+export const featureDataTextLeft = {
+  ...featureData,
+  layout: 'text-left',
+};
 
 export const knobify = (data = featureData) => ({
-  body: text('Body', data.body),
+  ...data,
+  layout: select('Layout', ['text-right', 'text-left'], data.layout),
 });

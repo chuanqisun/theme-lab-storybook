@@ -1,19 +1,19 @@
 @import '../00-abstracts/index.scss';
 
-$m-hero-pre-body-margin: 8px;
-$m-hero-text-container-padding: 32px;
-$m-hero-heading-color: $a-black;
-$m-hero-heading-font-weight: 600;
-$m-hero-heading-font-size: 28px;
-$m-hero-heading-font-family: $a-primary-font-family;
-$m-hero-heading-max-length: 30em;
 $m-hero-body-color: $a-black;
-$m-hero-body-font-weight: 400;
-$m-hero-body-font-size: 14px;
 $m-hero-body-font-family: $a-primary-font-family;
+$m-hero-body-font-size: 14px;
+$m-hero-body-font-weight: 400;
 $m-hero-body-max-length: 30em;
-$m-hero-pre-links-margin: 32px;
-$m-hero-post-link-margin: 16px;
+$m-hero-body-top-margin: 8px;
+$m-hero-heading-color: $a-black;
+$m-hero-heading-font-family: $a-primary-font-family;
+$m-hero-heading-font-size: 28px;
+$m-hero-heading-font-weight: 600;
+$m-hero-heading-max-length: 30em;
+$m-hero-link-right-margin: 16px;
+$m-hero-links-top-margin: 32px;
+$m-hero-text-container-padding: 32px;
 
 @mixin overlay-text-on-image {
   .text-container {
@@ -70,12 +70,12 @@ $m-hero-post-link-margin: 16px;
 
   /* paragraph should have top margin only when there's something above it */
   * + .paragraph {
-    margin-top: $m-hero-pre-body-margin;
+    margin-top: $m-hero-body-top-margin;
   }
 
   /* links should have 32px top margin only when there's something above it */
   * + .links-container {
-    margin-top: $m-hero-pre-links-margin;
+    margin-top: $m-hero-links-top-margin;
   }
 
   .text-container {
@@ -125,7 +125,7 @@ $m-hero-post-link-margin: 16px;
     }
     .c-btn + .c-btn {
       margin-top: 0;
-      margin-left: $m-hero-post-link-margin;
+      margin-left: $m-hero-link-right-margin;
     }
   }
 }

@@ -1,7 +1,62 @@
 @import '../00-abstracts/index';
 
+$m-feature-body-top-margin: 8px;
 $m-feature-font-family: $a-primary-font-family;
+$m-feature-gutter: 32px;
+$m-feature-link-right-margin: 16px;
+$m-feature-links-top-margin: 32px;
+$m-feature-reflow-breakpoint: 600px;
+$m-feautre-side-padding-desktop: $a-side-padding-xl;
+$m-feature-text-container-padding-mobile: 32px;
+$m-feature-text-container-padding-desktop: 0; // relying on grid gutter and module side padding
 
 .m-feature {
   font-family: $m-feature-font-family;
+
+  /* paragraph should have top margin only when there's something above it */
+  * + .paragraph {
+    margin-top: $m-feature-body-top-margin;
+  }
+
+  /* links should have 32px top margin only when there's something above it */
+  * + .links-container {
+    margin-top: $m-feature-links-top-margin;
+  }
+
+  .text-container {
+    padding: $m-feature-text-container-padding-mobile;
+  }
+
+  @media screen and (min-width: $m-feature-reflow-breakpoint) {
+    & {
+      padding: 0 $m-feautre-side-padding-desktop;
+    }
+
+    .img {
+      lost-column: 2/3 2 $m-feature-gutter;
+    }
+
+    .text-container {
+      lost-column: 1/3 2 $m-feature-gutter;
+      padding: $m-feature-text-container-padding-desktop;
+    }
+
+    &.text-left {
+      .img {
+        lost-move: 1/3; // shift image to right
+      }
+
+      .text-container {
+        lost-move: -2/3; // shift text to left
+      }
+    }
+
+    .c-btn {
+      width: auto;
+    }
+    .c-btn + .c-btn {
+      margin-top: 0;
+      margin-left: $m-feature-link-right-margin;
+    }
+  }
 }

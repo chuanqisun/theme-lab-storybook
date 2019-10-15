@@ -10,7 +10,7 @@ export const heroData = {
       { media: '(max-width: 1200px)', srcSet: 'https://via.placeholder.com/1200X500' },
     ],
   },
-  textAlignment: 'top-left',
+  textAlignment: 'left',
   title: 'Heading',
   body:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
@@ -42,7 +42,9 @@ export const knobify = (data = heroData) => ({
   links: array('Links', data.links),
   textAlignment: select(
     'Text alignment',
-    ['top-left', 'top', 'top-right', 'left', 'center', 'right', 'bottom-left', 'bottom', 'bottom-right'],
+    ['left', 'center', 'right'],
+    // We could support all 9 positions but for simplicity, we surface only 3
+    // ['top-left', 'top', 'top-right', 'left', 'center', 'right', 'bottom-left', 'bottom', 'bottom-right'],
     data.textAlignment
   ),
 });
