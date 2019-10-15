@@ -6,5 +6,6 @@ export const <%= camelName%>Data = {
 
 
 export const knobify = (data = <%= camelName%>Data) => ({
+  ...data,
   body: text('Body', data.body),
 });

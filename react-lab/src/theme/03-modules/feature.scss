@@ -1,6 +1,6 @@
-@import '../00-variables/index';
+@import '../00-abstracts/index';
 
-$m-feature-font-family : $primary-font-family;
+$m-feature-font-family: $primary-font-family;
 
 .m-feature {
   font-family: $m-feature-font-family;
