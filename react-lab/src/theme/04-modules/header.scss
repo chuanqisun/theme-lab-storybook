@@ -1,4 +1,5 @@
-@import '../00-abstracts/index';
+@import '../00-settings/typography';
+@import '../00-settings/spacing';
 
 $m-header-bottom-padding: 32px;
 $m-header-category-gap: 24px;
@@ -6,13 +7,14 @@ $m-header-font-family: $a-primary-font-family;
 $m-header-nav-top-margin: 32px;
 $m-header-toolbar-items-gap: 8px;
 $m-header-top-padding: 20px;
+$m-heading-side-padding: $a-page-side-padding-l;
 
 .m-header {
   font-family: $m-header-font-family;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: $m-header-top-padding $a-page-side-padding-l $m-header-bottom-padding;
+  padding: $m-header-top-padding $m-heading-side-padding $m-header-bottom-padding;
 
   .logo {
     margin-right: auto;

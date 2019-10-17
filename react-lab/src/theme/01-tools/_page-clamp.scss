@@ -1,0 +1,24 @@
+@import '../00-settings/breakpoints';
+@import '../00-settings/spacing';
+
+$t-page-clamp-side-padding-s: $a-page-side-padding-s;
+$t-page-clamp-side-padding-l: $a-page-side-padding-l;
+$t-page-clamp-side-padding-xl: $a-page-side-padding-xl;
+$t-page-clamp-s-to-l-breakpoint: $a-breakpoint-m;
+$t-page-clamp-l-to-xl-breakpoint: $a-breakpoint-l;
+$t-page-clamp-clamped-width: $a-page-section-clamped-width;
+
+// Limit the max width of an element with margin on either side of the element
+@mixin t-page-clamp {
+  padding: 0 $t-page-clamp-side-padding-s;
+  max-width: $t-page-clamp-clamped-width;
+  margin: auto;
+
+  @media screen and (min-width: $t-page-clamp-s-to-l-breakpoint) {
+    padding: 0 $t-page-clamp-side-padding-l;
+  }
+
+  @media screen and (min-width: $t-page-clamp-l-to-xl-breakpoint) {
+    padding: 0 $t-page-clamp-side-padding-xl;
+  }
+}

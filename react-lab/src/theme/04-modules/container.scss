@@ -1,0 +1,7 @@
+@import '../01-tools/page-clamp.scss';
+
+.m-container {
+  &:not(.full-bleed) {
+    @include t-page-clamp;
+  }
+}
