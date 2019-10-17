@@ -1,16 +1,16 @@
 @import '../00-settings/colors';
 @import '../00-settings/breakpoints';
 
-$m-feature-body-color: $a-black;
+$m-feature-body-color: $s-black;
 $m-feature-body-font-size: 14px;
 $m-feature-body-font-weight: 400;
 $m-feature-body-top-margin: 8px;
-$m-feature-heading-color: $a-black;
+$m-feature-heading-color: $s-black;
 $m-feature-heading-font-size: 28px;
 $m-feature-heading-font-weight: 600;
 $m-feature-link-right-margin: 16px;
 $m-feature-links-top-margin: 32px;
-$m-feature-module-reflow-breakpoint: $a-breakpoint-m;
+$m-feature-module-reflow-breakpoint: $s-breakpoint-m;
 $m-feature-text-container-padding: 20px;
 
 .m-feature {

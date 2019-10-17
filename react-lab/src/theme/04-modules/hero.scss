@@ -1,20 +1,20 @@
 @import '../00-settings/colors';
 @import '../00-settings/breakpoints';
 
-$m-hero-body-color: $a-black;
+$m-hero-body-color: $s-black;
 $m-hero-body-font-size: 14px;
 $m-hero-body-font-weight: 400;
 $m-hero-body-max-length: 30em;
 $m-hero-body-top-margin: 8px;
-$m-hero-heading-color: $a-black;
+$m-hero-heading-color: $s-black;
 $m-hero-heading-font-size: 28px;
 $m-hero-heading-font-weight: 600;
 $m-hero-heading-max-length: 30em;
 $m-hero-link-right-margin: 16px;
-$m-hero-links-reflow-breakpoint: $a-breakpoint-m;
+$m-hero-links-reflow-breakpoint: $s-breakpoint-m;
 $m-hero-links-top-margin: 32px;
 $m-hero-module-height: 500px;
-$m-hero-module-reflow-breakpoint: $a-breakpoint-l;
+$m-hero-module-reflow-breakpoint: $s-breakpoint-l;
 $m-hero-text-container-padding: 32px;
 
 @mixin overlay-text-on-image {

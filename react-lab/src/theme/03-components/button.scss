@@ -1,7 +1,7 @@
 @import '../00-settings/colors';
 
-$c-btn-primary-color: $a-white;
-$c-btn-primary-bg: $a-blue;
+$c-btn-primary-color: $s-white;
+$c-btn-primary-bg: $s-blue;
 $c-btn-min-width: 160px;
 $c-btn-side-padding: 12px;
 $c-btn-height: 48px;
@@ -18,7 +18,7 @@ a.c-btn {
   color: $c-btn-primary-color;
   cursor: pointer;
   display: inline-flex;
-  font-family: $a-primary-font-family;
+  font-family: $s-primary-font-family;
   height: $c-btn-height;
   justify-content: center;
   min-width: $c-btn-min-width;
