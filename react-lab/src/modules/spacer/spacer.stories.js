@@ -14,7 +14,7 @@ export const basic = () => (
       dangerouslySetInnerHTML={{
         __html: `
     .m-spacer {
-        background-color: rgba(255,0,0,0.5);
+        background-color: rgba(255,0,0,0.25);
     }
     `,
       }}
