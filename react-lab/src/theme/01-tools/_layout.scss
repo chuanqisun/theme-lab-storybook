@@ -1,0 +1,28 @@
+@import '../00-settings/breakpoints';
+
+$t-layout-page-side-padding-s: 20px;
+$t-layout-page-side-padding-l: 60px;
+$t-layout-page-side-padding-xl: 120px;
+$t-layout-page-clamp-width: 1440px;
+
+// Limit the max width of an element with margin on either side of the element
+@mixin t-layout-page-clamp {
+  max-width: $t-layout-page-clamp-width;
+  margin: auto;
+}
+
+// Prevent content from touch the edge of the screen with padding on either side of the element
+@mixin t-layout-page-side-padding {
+  padding-left: $t-layout-page-side-padding-s;
+  padding-right: $t-layout-page-side-padding-s;
+
+  @media screen and (min-width: $s-breakpoint-m) {
+    padding-left: $t-layout-page-side-padding-l;
+    padding-right: $t-layout-page-side-padding-l;
+  }
+
+  @media screen and (min-width: $s-breakpoint-l) {
+    padding-left: $t-layout-page-side-padding-xl;
+    padding-right: $t-layout-page-side-padding-xl;
+  }
+}

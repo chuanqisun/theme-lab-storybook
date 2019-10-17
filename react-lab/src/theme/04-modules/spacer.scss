@@ -1,14 +1,12 @@
-@import '../00-settings/spacing';
 @import '../00-settings/breakpoints';
 
-$m-spacer-size-desktop: $s-vertical-gutter-base-unit-desktop;
-$m-spacer-size-mobile: $s-vertical-gutter-base-unit-mobile;
-$m-spacer-shrink-breakpoint: $s-breakpoint-m;
+$m-spacer-size-desktop: 80px;
+$m-spacer-size-mobile: 48px;
 
 .m-spacer {
-  height: $s-vertical-gutter-base-unit-mobile;
+  height: $m-spacer-size-mobile;
 
-  @media screen and (min-width: $m-spacer-shrink-breakpoint) {
+  @media screen and (min-width: $s-breakpoint-m) {
     & {
       height: $m-spacer-size-desktop;
     }

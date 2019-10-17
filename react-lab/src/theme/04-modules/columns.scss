@@ -1,10 +1,11 @@
-@import '../01-tools/page-clamp.scss';
+@import '../01-tools/layout.scss';
 
 .m-columns {
   lost-utility: clearfix; // Lost grid uses float. Use clearfix to achieve correct element height
 
   &:not(.full-bleed) {
-    @include t-page-clamp;
+    @include t-layout-page-clamp;
+    @include t-layout-page-side-padding;
   }
 
   &.ratio-1-1 > * {

@@ -10,7 +10,6 @@ $m-feature-heading-font-size: 28px;
 $m-feature-heading-font-weight: 600;
 $m-feature-link-right-margin: 16px;
 $m-feature-links-top-margin: 32px;
-$m-feature-module-reflow-breakpoint: $s-breakpoint-m;
 $m-feature-text-container-padding: 20px;
 
 .m-feature {
@@ -46,13 +45,13 @@ $m-feature-text-container-padding: 20px;
     width: 100%;
   }
 
-  @media screen and (min-width: $m-feature-module-reflow-breakpoint) {
+  @media screen and (min-width: $s-breakpoint-m) {
     .img {
-      lost-column: 2/3 2;
+      lost-column: 2/3 2 0px;
     }
 
     .text-container {
-      lost-column: 1/3 2;
+      lost-column: 1/3 2 0px;
     }
 
     &.text-left {

@@ -11,7 +11,6 @@ $m-hero-heading-font-size: 28px;
 $m-hero-heading-font-weight: 600;
 $m-hero-heading-max-length: 30em;
 $m-hero-link-right-margin: 16px;
-$m-hero-links-reflow-breakpoint: $s-breakpoint-m;
 $m-hero-links-top-margin: 32px;
 $m-hero-module-height: 500px;
 $m-hero-module-reflow-breakpoint: $s-breakpoint-l;
@@ -32,26 +31,6 @@ $m-hero-text-container-padding: 32px;
 
   img {
     min-width: 100%;
-  }
-
-  /**
-   * Text over image by default only in modern browsers.
-   * We must reflow the text to bottom in IE 11 because it doesn't support srcset and the image will be too short to put text over it.
-   */
-  @supports (object-fit: cover) {
-    img {
-      height: $m-hero-module-height;
-      object-fit: cover;
-    }
-
-    @include overlay-text-on-image;
-  }
-
-  /**
-   * When the image is tall enough for IE 11 to display text on top of it. 
-   */
-  @media screen and (min-width: $m-hero-module-reflow-breakpoint) {
-    @include overlay-text-on-image;
   }
 
   .heading {
@@ -119,7 +98,20 @@ $m-hero-text-container-padding: 32px;
     margin-top: 16px;
   }
 
-  @media screen and (min-width: $m-hero-links-reflow-breakpoint) {
+  /**
+   * Text over image by default only in modern browsers.
+   * We must reflow the text to bottom in IE 11 because it doesn't support srcset and the image will be too short to put text over it.
+   */
+  @supports (object-fit: cover) {
+    img {
+      height: $m-hero-module-height;
+      object-fit: cover;
+    }
+
+    @include overlay-text-on-image;
+  }
+
+  @media screen and (min-width: $s-breakpoint-m) {
     .c-btn {
       width: auto;
     }
@@ -127,5 +119,12 @@ $m-hero-text-container-padding: 32px;
       margin-top: 0;
       margin-left: $m-hero-link-right-margin;
     }
+  }
+
+  /**
+   * When the image is tall enough for IE 11 to display text on top of it. 
+   */
+  @media screen and (min-width: $s-breakpoint-l) {
+    @include overlay-text-on-image;
   }
 }

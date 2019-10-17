@@ -1,7 +1,8 @@
-@import '../01-tools/page-clamp.scss';
+@import '../01-tools/layout.scss';
 
 .m-container {
   &:not(.full-bleed) {
-    @include t-page-clamp;
+    @include t-layout-page-clamp;
+    @include t-layout-page-side-padding;
   }
 }

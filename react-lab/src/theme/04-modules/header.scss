@@ -1,5 +1,5 @@
 @import '../00-settings/typography';
-@import '../00-settings/spacing';
+@import '../01-tools/layout.scss';
 
 $m-header-bottom-padding: 32px;
 $m-header-category-gap: 24px;
@@ -7,14 +7,16 @@ $m-header-font-family: $s-primary-font-family;
 $m-header-nav-top-margin: 32px;
 $m-header-toolbar-items-gap: 8px;
 $m-header-top-padding: 20px;
-$m-heading-side-padding: $s-page-side-padding-l;
+$m-heading-side-padding: 60px;
 
 .m-header {
   font-family: $m-header-font-family;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: $m-header-top-padding $m-heading-side-padding $m-header-bottom-padding;
+  padding-top: $m-header-top-padding;
+  padding-bottom: $m-header-bottom-padding;
+  @include t-layout-page-side-padding;
 
   .logo {
     margin-right: auto;
