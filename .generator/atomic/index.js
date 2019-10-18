@@ -23,7 +23,6 @@ module.exports = class extends Generator {
           default: answers => `Untitled ${answers.type}`,
         },
       ]);
-      this.type = this.answers.type;
       this.displayName = toSentence(this.answers.name);
       this.kebabName = toKebabCase(this.answers.name);
       this.camelName = toCamcelCase(this.answers.name);
@@ -32,40 +31,79 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    if (this.answers.type === 'Module') {
-      this.generateModule();
-    } else if (this.answers.type === 'Component') {
-      this.generateComponent();
+    switch (this.answers.type) {
+      case 'Module':
+        this.fs.copyTpl(this.templatePath('./module/module.notes.md.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.notes.md`));
+
+        this.fs.copyTpl(this.templatePath('./module/module.data.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.data.js`), {
+          camelName: this.camelName,
+        });
+
+        this.fs.copyTpl(
+          this.templatePath('./module/module.module.js.ejs'),
+          this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.module.js`),
+          {
+            kebabName: this.kebabName,
+            camelName: this.camelName,
+            pascalName: this.pascalName,
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('./module/module.stories.js.ejs'),
+          this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.stories.js`),
+          {
+            displayName: this.displayName,
+            kebabName: this.kebabName,
+            camelName: this.camelName,
+            pascalName: this.pascalName,
+          }
+        );
+
+        this.fs.copyTpl(this.templatePath('./module/index.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/index.js`), {
+          kebabName: this.kebabName,
+        });
+
+        this.fs.copyTpl(this.templatePath('./module/module.scss.ejs'), this.destinationPath(`./src/theme/04-modules/${this.kebabName}.scss`), {
+          kebabName: this.kebabName,
+        });
+        break;
+      case 'Component':
+        this.fs.copyTpl(
+          this.templatePath('./component/component.notes.md.ejs'),
+          this.destinationPath(`./src/components/${this.kebabName}/${this.kebabName}.notes.md`)
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('./component/component.component.js.ejs'),
+          this.destinationPath(`./src/components/${this.kebabName}/${this.kebabName}.component.js`),
+          {
+            kebabName: this.kebabName,
+            camelName: this.camelName,
+            pascalName: this.pascalName,
+          }
+        );
+
+        this.fs.copyTpl(
+          this.templatePath('./component/component.stories.js.ejs'),
+          this.destinationPath(`./src/components/${this.kebabName}/${this.kebabName}.stories.js`),
+          {
+            displayName: this.displayName,
+            kebabName: this.kebabName,
+            camelName: this.camelName,
+            pascalName: this.pascalName,
+          }
+        );
+
+        this.fs.copyTpl(this.templatePath('./component/index.js.ejs'), this.destinationPath(`./src/components/${this.kebabName}/index.js`), {
+          kebabName: this.kebabName,
+        });
+
+        this.fs.copyTpl(this.templatePath('./component/component.scss.ejs'), this.destinationPath(`./src/theme/03-components/${this.kebabName}.scss`), {
+          kebabName: this.kebabName,
+        });
+        break;
     }
-  }
-
-  generateModule() {
-    this.fs.copyTpl(this.templatePath('./module/module.notes.md.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.notes.md`));
-
-    this.fs.copyTpl(this.templatePath('./module/module.data.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.data.js`), {
-      camelName: this.camelName,
-    });
-
-    this.fs.copyTpl(this.templatePath('./module/module.module.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.module.js`), {
-      kebabName: this.kebabName,
-      camelName: this.camelName,
-      pascalName: this.pascalName,
-    });
-
-    this.fs.copyTpl(this.templatePath('./module/module.stories.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.stories.js`), {
-      displayName: this.displayName,
-      kebabName: this.kebabName,
-      camelName: this.camelName,
-      pascalName: this.pascalName,
-    });
-
-    this.fs.copyTpl(this.templatePath('./module/index.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/index.js`), {
-      kebabName: this.kebabName,
-    });
-
-    this.fs.copyTpl(this.templatePath('./module/module.scss.ejs'), this.destinationPath(`./src/theme/04-modules/${this.kebabName}.scss`), {
-      kebabName: this.kebabName,
-    });
   }
 };
 
