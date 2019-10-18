@@ -1,6 +1,6 @@
 import React from 'react';
 import { headerData } from './header.data';
-import { Icon } from '../../components/icon.component';
+import { Icon } from '../../components/icon';
 
 export const Header = ({ logo = headerData.logo, account = headerData.account, cart = headerData.cart, nav = headerData.nav, ...props }) => (
   <header className="m-header">
