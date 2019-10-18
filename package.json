@@ -6,7 +6,7 @@
   "scripts": {
     "start": "start-storybook -p 6006",
     "build": "build-storybook",
-    "new:module": "yo .generator/module/index.js"
+    "new": "yo .generator/atomic/index.js"
   },
   "keywords": [],
   "author": "",

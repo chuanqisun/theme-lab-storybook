@@ -40,30 +40,30 @@ module.exports = class extends Generator {
   }
 
   generateModule() {
-    this.fs.copyTpl(this.templatePath('./module.notes.md.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.notes.md`));
+    this.fs.copyTpl(this.templatePath('./module/module.notes.md.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.notes.md`));
 
-    this.fs.copyTpl(this.templatePath('./module.data.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.data.js`), {
+    this.fs.copyTpl(this.templatePath('./module/module.data.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.data.js`), {
       camelName: this.camelName,
     });
 
-    this.fs.copyTpl(this.templatePath('./module.module.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.module.js`), {
+    this.fs.copyTpl(this.templatePath('./module/module.module.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.module.js`), {
       kebabName: this.kebabName,
       camelName: this.camelName,
       pascalName: this.pascalName,
     });
 
-    this.fs.copyTpl(this.templatePath('./module.stories.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.stories.js`), {
+    this.fs.copyTpl(this.templatePath('./module/module.stories.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.stories.js`), {
       displayName: this.displayName,
       kebabName: this.kebabName,
       camelName: this.camelName,
       pascalName: this.pascalName,
     });
 
-    this.fs.copyTpl(this.templatePath('./index.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/index.js`), {
+    this.fs.copyTpl(this.templatePath('./module/index.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/index.js`), {
       kebabName: this.kebabName,
     });
 
-    this.fs.copyTpl(this.templatePath('./module.scss.ejs'), this.destinationPath(`./src/theme/04-modules/${this.kebabName}.scss`), {
+    this.fs.copyTpl(this.templatePath('./module/module.scss.ejs'), this.destinationPath(`./src/theme/04-modules/${this.kebabName}.scss`), {
       kebabName: this.kebabName,
     });
   }
