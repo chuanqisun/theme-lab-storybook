@@ -11,7 +11,7 @@ import { Footer } from '../../modules/footer';
 
 export default { title: 'Pages/Home' };
 
-export const Home = () => (
+export const fullBleed = () => (
   <>
     <MessageBar />
     <Header />
@@ -31,7 +31,7 @@ export const Home = () => (
   </>
 );
 
-export const Home2 = () => (
+export const clamped = () => (
   <>
     <MessageBar />
     <Header />
