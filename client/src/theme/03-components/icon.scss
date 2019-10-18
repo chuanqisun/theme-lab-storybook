@@ -6,13 +6,12 @@
 */
 @font-face {
   font-family: $icon-font-family;
-  src: url('../00-settings/fabric-icons.woff') format('woff');
+  src: url('//theme-lab-cdn.netlify.com/fonts/FabExMDL2.woff') format('woff');
 }
 
 @mixin use-glyph($unicode) {
   &::before {
     content: $unicode;
-    font-family: $icon-font-family;
   }
 }
 
