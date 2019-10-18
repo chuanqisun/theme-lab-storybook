@@ -7,6 +7,7 @@ import { Spacer } from '../../modules/spacer';
 import { Columns, columnsData1To1To1, columnsDataClamped } from '../../modules/columns';
 import { Card } from '../../modules/card';
 import { Container, containerDataClamped } from '../../modules/container';
+import { Footer } from '../../modules/footer';
 
 export default { title: 'Pages/Home' };
 
@@ -25,6 +26,8 @@ export const Home = () => (
       <Card />
       <Card />
     </Columns>
+    <Spacer />
+    <Footer />
   </>
 );
 
@@ -45,5 +48,7 @@ export const Home2 = () => (
         <Card />
       </Columns>
     </Container>
+    <Spacer />
+    <Footer />
   </>
 );
