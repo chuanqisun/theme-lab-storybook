@@ -11,12 +11,19 @@ module.exports = class extends Generator {
     if (!this.name) {
       this.answers = await this.prompt([
         {
+          type: 'list',
+          name: 'type',
+          message: 'What to create',
+          choices: ['Component', 'Module'],
+        },
+        {
           type: 'input',
           name: 'name',
-          message: 'Your component name',
-          default: 'Untitled module',
+          message: answers => `${answers.type} name`,
+          default: answers => `Untitled ${answers.type}`,
         },
       ]);
+      this.type = this.answers.type;
       this.displayName = toSentence(this.answers.name);
       this.kebabName = toKebabCase(this.answers.name);
       this.camelName = toCamcelCase(this.answers.name);
@@ -25,6 +32,14 @@ module.exports = class extends Generator {
   }
 
   writing() {
+    if (this.answers.type === 'Module') {
+      this.generateModule();
+    } else if (this.answers.type === 'Component') {
+      this.generateComponent();
+    }
+  }
+
+  generateModule() {
     this.fs.copyTpl(this.templatePath('./module.notes.md.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.notes.md`));
 
     this.fs.copyTpl(this.templatePath('./module.data.js.ejs'), this.destinationPath(`./src/modules/${this.kebabName}/${this.kebabName}.data.js`), {
@@ -48,7 +63,7 @@ module.exports = class extends Generator {
       kebabName: this.kebabName,
     });
 
-    this.fs.copyTpl(this.templatePath('./module.scss.ejs'), this.destinationPath(`./src/theme/03-modules/${this.kebabName}.scss`), {
+    this.fs.copyTpl(this.templatePath('./module.scss.ejs'), this.destinationPath(`./src/theme/04-modules/${this.kebabName}.scss`), {
       kebabName: this.kebabName,
     });
   }
