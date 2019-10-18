@@ -25,17 +25,23 @@
   font-weight: normal;
   speak: none;
 
-  .sr-label {
+  .c-icon__sr-label {
     @include visually-hidden;
   }
 
-  &.cart {
+  &.c-icon--cart {
     @include use-glyph($shopping-bag);
   }
-  &.wishlist {
+  &.c-icon--wishlist {
     @include use-glyph($heart);
   }
-  &.search {
+  &.c-icon--search {
     @include use-glyph($magnifying-glass);
+  }
+  &.c-icon--go-shop {
+    @include use-glyph($arrow-right);
+  }
+  &.c-icon--close {
+    @include use-glyph($x-shape);
   }
 }

@@ -13,8 +13,31 @@ export const boxedPrimaryLinkWide = () => (
     Primary
   </a>
 );
+export const boxedIconBefore = () => (
+  <button className="c-btn c-btn--icon-before">
+    <Icon name="cart" label="cart" />
+    (99)
+  </button>
+);
+export const boxedIconAfter = () => (
+  <button className="c-btn c-btn--icon-after">
+    Shop this collection
+    <Icon name="go-shop" />
+  </button>
+);
 export const square = () => (
   <button className="c-btn c-btn--square">
     <Icon name="cart" />
+  </button>
+);
+export const squarePrimary = () => (
+  <button className="c-btn c-btn--square c-btn--primary">
+    <Icon name="cart" />
+  </button>
+);
+export const ghost = () => <button className="c-btn c-btn--ghost">Ghost button</button>;
+export const ghostSquare = () => (
+  <button className="c-btn c-btn--ghost c-btn--square">
+    <Icon name="close" label="close" />
   </button>
 );

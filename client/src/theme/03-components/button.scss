@@ -7,6 +7,7 @@ $c-btn-primary-bg: $s-blue;
 $c-btn-min-width: 160px;
 $c-btn-side-padding: 12px;
 $c-btn-height: 48px;
+$c-btn-icon-to-text-gap: 4px;
 
 a.c-btn {
   display: inline-flex;
@@ -25,6 +26,10 @@ a.c-btn {
   justify-content: center;
   padding: 0 $c-btn-side-padding;
 
+  &.c-btn--ghost {
+    background-color: transparent;
+  }
+
   &.c-btn--primary {
     background-color: $c-btn-primary-bg;
     color: $c-btn-primary-color;
@@ -37,5 +42,17 @@ a.c-btn {
   &.c-btn--square {
     width: $c-btn-height;
     height: $c-btn-height;
+  }
+
+  &.c-btn--icon-before {
+    > :first-child {
+      margin-right: $c-btn-icon-to-text-gap;
+    }
+  }
+
+  &.c-btn--icon-after {
+    > :last-child {
+      margin-left: $c-btn-icon-to-text-gap;
+    }
   }
 }
