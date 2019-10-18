@@ -18,35 +18,35 @@ $m-heading-side-padding: 60px;
   padding-bottom: $m-header-bottom-padding;
   @include t-layout-page-side-padding;
 
-  .logo {
+  .m-header__logo {
     margin-right: auto;
   }
 
-  .search {
+  .m-header__search {
   }
 
-  .account {
+  .m-header__account {
     margin-left: $m-header-toolbar-items-gap;
   }
 
-  .wishlist {
+  .m-header__wishlist {
     margin-left: $m-header-toolbar-items-gap;
   }
 
-  .cart {
+  .m-header__cart {
     margin-left: $m-header-toolbar-items-gap;
   }
 
-  .nav {
+  .m-header__nav {
     width: 100%;
   }
 
-  .nav-ul {
+  .m-header__nav-ul {
     display: flex;
     margin-top: $m-header-nav-top-margin;
   }
 
-  .nav-li {
+  .m-header__nav-li {
     margin-right: $m-header-category-gap;
   }
 }
