@@ -1,5 +1,27 @@
+$m-card-text-container-top-margin: 12px;
+$m-card-body-top-margin: 4px;
+$m-card-module-font-size: 14px;
+$m-card-heading-font-size: 18px;
+$m-card-heading-font-weight: 400;
+
 .m-card {
-  .img {
+  font-size: $m-card-module-font-size;
+
+  .m-card__img {
     width: 100%;
+  }
+
+  .m-card__text-container {
+    margin-top: $m-card-text-container-top-margin;
+  }
+
+  .m-card__heading {
+    font-size: $m-card-heading-font-size;
+    font-weight: $m-card-heading-font-weight;
+  }
+
+  /* body should have top margin only when there's something above it */
+  * + .m-card__body {
+    margin-top: $m-card-body-top-margin;
   }
 }

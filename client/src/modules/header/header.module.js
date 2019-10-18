@@ -5,7 +5,7 @@ import { Icon } from '../../components/icon';
 export const Header = ({ logo = headerData.logo, account = headerData.account, cart = headerData.cart, nav = headerData.nav, ...props }) => (
   <header className="m-header">
     <img className="m-header__logo" src={logo.src} />
-    <button className="c-btn m-header__search">
+    <button className="c-btn c-btn--icon-before m-header__search">
       <Icon name="search" />
       Search
     </button>
@@ -21,7 +21,7 @@ export const Header = ({ logo = headerData.logo, account = headerData.account, c
     <a className="c-btn c-btn--square m-header__wishlist" href="javascript:void(0)">
       <Icon name="wishlist" label="wishlist" />
     </a>
-    <a className="c-btn m-header__cart" href="javascript:void(0)">
+    <a className="c-btn m-header__cart c-btn--icon-before" href="javascript:void(0)">
       <Icon name="cart" label="cart" />({cart.itemCount})
     </a>
     <nav className="m-header__nav">

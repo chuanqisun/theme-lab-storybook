@@ -22,7 +22,7 @@ export const Hero = ({
       {links && links.length > 0 && (
         <div className="links-container">
           {links.map(link => (
-            <a className="c-btn" key={link} href="javascript:void(0)">
+            <a className="c-btn c-btn--primary c-btn--wide" key={link} href="javascript:void(0)">
               {link}
             </a>
           ))}

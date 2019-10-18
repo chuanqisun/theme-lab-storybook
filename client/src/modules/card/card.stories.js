@@ -1,6 +1,6 @@
 import { withKnobs } from '@storybook/addon-knobs';
 import React from 'react';
-import { cardData, knobify } from './card.data';
+import { cardData, cardDataNoHeading, knobify } from './card.data';
 import { Card } from './card.module';
 import { Columns, columnsData1To1To1 } from '../columns';
 import notes from './card.notes.md';
@@ -12,5 +12,13 @@ export const basic = () => (
     <Card {...knobify(cardData)} />
     <Card {...knobify(cardData)} />
     <Card {...knobify(cardData)} />
+  </Columns>
+);
+
+export const noHeading = () => (
+  <Columns {...columnsData1To1To1}>
+    <Card {...knobify(cardDataNoHeading)} />
+    <Card {...knobify(cardDataNoHeading)} />
+    <Card {...knobify(cardDataNoHeading)} />
   </Columns>
 );
