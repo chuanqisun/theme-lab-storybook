@@ -1,0 +1,20 @@
+import React from 'react';
+import notes from './button.notes.md';
+import { Icon } from '../icon/icon.component';
+
+export default { title: 'Components/Button', parameters: { notes } };
+
+export const boxed = () => <button className="c-btn">Boxed</button>;
+export const boxedLink = () => <button className="c-btn">Boxed</button>;
+export const boxedWide = () => <button className="c-btn c-btn--wide">Boxed</button>;
+export const boxedPrimaryWide = () => <button className="c-btn c-btn--primary c-btn--wide">Primary</button>;
+export const boxedPrimaryLinkWide = () => (
+  <a className="c-btn c-btn--primary c-btn--wide" href="javascript:void(0)">
+    Primary
+  </a>
+);
+export const square = () => (
+  <button className="c-btn c-btn--square">
+    <Icon name="cart" />
+  </button>
+);

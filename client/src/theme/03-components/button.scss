@@ -1,5 +1,7 @@
 @import '../00-settings/colors';
 
+$c-btn-basic-color: $s-black;
+$c-btn-basic-bg: $s-gray;
 $c-btn-primary-color: $s-white;
 $c-btn-primary-bg: $s-blue;
 $c-btn-min-width: 160px;
@@ -13,14 +15,27 @@ a.c-btn {
 
 .c-btn {
   align-items: center;
-  background-color: $c-btn-primary-bg;
+  background-color: $c-btn-basic-bg;
   border: none;
-  color: $c-btn-primary-color;
+  color: $c-btn-basic-color;
   cursor: pointer;
   display: inline-flex;
   font-family: $s-primary-font-family;
   height: $c-btn-height;
   justify-content: center;
-  min-width: $c-btn-min-width;
   padding: 0 $c-btn-side-padding;
+
+  &.c-btn--primary {
+    background-color: $c-btn-primary-bg;
+    color: $c-btn-primary-color;
+  }
+
+  &.c-btn--wide {
+    min-width: $c-btn-min-width;
+  }
+
+  &.c-btn--square {
+    width: $c-btn-height;
+    height: $c-btn-height;
+  }
 }
