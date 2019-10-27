@@ -1,18 +1,28 @@
 @import '../00-settings/breakpoints';
 @import '../01-tools/layout';
 
-.m-columns {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: auto; // default is single column
-  grid-template-rows: auto;
+$grid-gap: 20px;
 
+.m-columns {
   &:not(.full-bleed) {
     @include t-layout-page-clamp;
     @include t-layout-page-side-padding;
   }
 
+  & > * + * {
+    margin-top: $grid-gap;
+  }
+
   @media screen and (min-width: $s-breakpoint-l) {
+    display: grid;
+    grid-gap: $grid-gap;
+    grid-template-columns: auto; // default is single column
+    grid-template-rows: auto;
+
+    & > * + * {
+      margin-top: 0;
+    }
+
     &.ratio-1-1 {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto;
