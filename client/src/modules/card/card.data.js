@@ -1,4 +1,4 @@
-import { text } from '@storybook/addon-knobs';
+import { text, array } from '@storybook/addon-knobs';
 
 export const cardData = {
   image: {
@@ -7,6 +7,7 @@ export const cardData = {
   },
   heading: 'Heading',
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  links: ['Shop now', 'Learn more'],
 };
 
 export const cardDataNoHeading = {
@@ -18,4 +19,5 @@ export const knobify = (data = cardData) => ({
   ...data,
   body: text('Body', data.body),
   heading: text('Heading', data.heading),
+  links: array('Links', data.links),
 });

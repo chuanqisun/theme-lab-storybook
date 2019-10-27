@@ -1,4 +1,5 @@
-@import '../01-tools/layout.scss';
+@import '../00-settings/breakpoints';
+@import '../01-tools/layout';
 
 .m-columns {
   display: grid;
@@ -11,23 +12,25 @@
     @include t-layout-page-side-padding;
   }
 
-  &.ratio-1-1 {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
+  @media screen and (min-width: $s-breakpoint-l) {
+    &.ratio-1-1 {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+    }
 
-  &.ratio-1-1-1 {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-  }
+    &.ratio-1-1-1 {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+    }
 
-  &.ratio-1-2 {
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: auto;
-  }
+    &.ratio-1-2 {
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto;
+    }
 
-  &.ratio-2-1 {
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
+    &.ratio-2-1 {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto;
+    }
   }
 }
