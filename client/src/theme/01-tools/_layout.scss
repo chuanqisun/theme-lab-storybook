@@ -1,8 +1,13 @@
 @import '../00-settings/breakpoints';
 
-$t-layout-page-side-padding-s: 20px;
-$t-layout-page-side-padding-l: 60px;
-$t-layout-page-side-padding-xl: 120px;
+$t-layout-h-padding-s: 16px;
+$t-layout-h-padding-m: 40px;
+$t-layout-h-padding-l: 80px;
+$t-layout-h-padding-xl: 120px;
+$t-layout-v-padding-s: 16px;
+$t-layout-v-padding-m: 40px;
+$t-layout-v-padding-l: 64px;
+$t-layout-v-padding-xl: 80px;
 $t-layout-page-clamp-width: 1440px;
 
 // Limit the max width of an element with margin on either side of the element
@@ -13,16 +18,37 @@ $t-layout-page-clamp-width: 1440px;
 
 // Prevent content from touch the edge of the screen with padding on either side of the element
 @mixin t-layout-page-side-padding {
-  padding-left: $t-layout-page-side-padding-s;
-  padding-right: $t-layout-page-side-padding-s;
+  padding-left: $t-layout-h-padding-s;
+  padding-right: $t-layout-h-padding-s;
 
   @media screen and (min-width: $s-breakpoint-m) {
-    padding-left: $t-layout-page-side-padding-l;
-    padding-right: $t-layout-page-side-padding-l;
+    padding-left: $t-layout-h-padding-m;
+    padding-right: $t-layout-h-padding-m;
   }
 
   @media screen and (min-width: $s-breakpoint-l) {
-    padding-left: $t-layout-page-side-padding-xl;
-    padding-right: $t-layout-page-side-padding-xl;
+    padding-left: $t-layout-h-padding-l;
+    padding-right: $t-layout-h-padding-l;
+  }
+
+  @media screen and (min-width: $s-breakpoint-xl) {
+    padding-left: $t-layout-h-padding-xl;
+    padding-right: $t-layout-h-padding-xl;
+  }
+}
+
+@mixin t-layout-content-block-padding {
+  padding: $t-layout-v-padding-s $t-layout-h-padding-s;
+
+  @media screen and (min-width: $s-breakpoint-m) {
+    padding: $t-layout-v-padding-m $t-layout-h-padding-m;
+  }
+
+  @media screen and (min-width: $s-breakpoint-l) {
+    padding: $t-layout-v-padding-l $t-layout-h-padding-l;
+  }
+
+  @media screen and (min-width: $s-breakpoint-xl) {
+    padding: $t-layout-v-padding-xl $t-layout-h-padding-xl;
   }
 }

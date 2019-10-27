@@ -1,5 +1,6 @@
 @import '../00-settings/colors';
 @import '../00-settings/breakpoints';
+@import '../01-tools/layout';
 
 $m-feature-body-color: $s-black;
 $m-feature-body-font-size: 14px;
@@ -10,70 +11,67 @@ $m-feature-heading-font-size: 28px;
 $m-feature-heading-font-weight: 600;
 $m-feature-link-right-margin: 16px;
 $m-feature-links-top-margin: 32px;
-$m-feature-text-container-padding: 20px;
+$m-feature-link-to-link-spacing: 16px;
 
 .m-feature {
-  /* body should have top margin only when there's something above it */
-  * + .body {
-    margin-top: $m-feature-body-top-margin;
-  }
-
-  /* links should have 32px top margin only when there's something above it */
-  * + .links-container {
-    margin-top: $m-feature-links-top-margin;
-  }
-
-  .text-container {
-    padding: $m-feature-text-container-padding;
-  }
-
-  .img {
+  .m-feature__image {
     width: 100%;
   }
 
-  .heading {
+  .m-feature__text-container {
+    @include t-layout-content-block-padding;
+    .c-btn {
+      margin: $m-feature-link-to-link-spacing / 2;
+    }
+  }
+
+  .m-feature__heading {
     color: $m-feature-heading-color;
     font-weight: $m-feature-heading-font-weight;
     font-size: $m-feature-heading-font-size;
   }
 
-  .body {
+  .m-feature__body {
     color: $m-feature-body-color;
     font-weight: $m-feature-body-font-weight;
     font-size: $m-feature-body-font-size;
   }
+  /* body should have top margin only when there's something above it */
+  * + .m-feature__body {
+    margin-top: $m-feature-body-top-margin;
+  }
 
-  .c-btn {
-    width: 100%;
+  .m-feature__links-container {
+    margin: -$m-feature-link-to-link-spacing / 2;
+  }
+
+  /* links should have top margin only when there's something above it */
+  * + .m-feature__links-container {
+    margin-top: $m-feature-links-top-margin - $m-feature-link-to-link-spacing / 2;
   }
 
   @media screen and (min-width: $s-breakpoint-m) {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
+    &.text-left,
+    &.text-right {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: auto;
+    }
 
     &.text-left {
       display: grid;
       grid-template-columns: 1fr 2fr;
       grid-template-rows: auto;
 
-      .image-container {
+      .m-feature__image-container {
         grid-column: 2 / span 1;
         grid-row: 1 / span 1;
       }
 
-      .text-container {
+      .m-feature__text-container {
         grid-column: 1 / span 1;
         grid-row: 1 / span 1;
       }
-    }
-
-    .c-btn {
-      width: auto;
-    }
-    .c-btn + .c-btn {
-      margin-top: 0;
-      margin-left: $m-feature-link-right-margin;
     }
   }
 }

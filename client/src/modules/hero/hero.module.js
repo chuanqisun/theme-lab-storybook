@@ -14,13 +14,13 @@ export const Hero = ({
       {image.sources.map((source, i) => (
         <source key={i} media={source.media} srcSet={source.srcSet} />
       ))}
-      <img className="img" src={image.src} srcSet={image.srcSet} />
+      <img className="m-hero__image" src={image.src} srcSet={image.srcSet} />
     </picture>
-    <div className={`text-container ${textAlignment}`}>
-      {heading && <h2 className="heading">{heading}</h2>}
-      {body && <p className="body">{body}</p>}
+    <div className={`m-hero__text-container ${textAlignment}`}>
+      {heading && <h2 className="m-hero__heading">{heading}</h2>}
+      {body && <p className="m-hero__body">{body}</p>}
       {links && links.length > 0 && (
-        <div className="links-container">
+        <div className="m-hero__links-container">
           {links.map(link => (
             <a className="c-btn c-btn--primary c-btn--wide" key={link} href="javascript:void(0)">
               {link}

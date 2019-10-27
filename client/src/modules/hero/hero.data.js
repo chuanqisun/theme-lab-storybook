@@ -32,7 +32,7 @@ export const heroDataLinksOnly = {
   ...heroData,
   heading: '',
   body: '',
-  textAlignment: 'bottom',
+  textAlignment: 'center',
 };
 
 export const knobify = (data = heroData) => ({
@@ -40,11 +40,5 @@ export const knobify = (data = heroData) => ({
   heading: text('Heading', data.heading),
   body: text('Body', data.body),
   links: array('Links', data.links),
-  textAlignment: select(
-    'Text alignment',
-    ['left', 'center', 'right'],
-    // We could support all 9 positions but for simplicity, we surface only 3
-    // ['top-left', 'top', 'top-right', 'left', 'center', 'right', 'bottom-left', 'bottom', 'bottom-right'],
-    data.textAlignment
-  ),
+  textAlignment: select('Text alignment', ['left', 'center', 'right'], data.textAlignment),
 });

@@ -1,4 +1,4 @@
-import { text, select, boolean } from '@storybook/addon-knobs';
+import { text, select, array } from '@storybook/addon-knobs';
 
 export const featureData = {
   image: {
@@ -17,8 +17,15 @@ export const featureDataTextLeft = {
   layout: 'text-left',
 };
 
+export const featureDataTextBottomMultiLink = {
+  ...featureData,
+  layout: 'text-bottom',
+  links: ['Shop men', 'Shop women'],
+};
+
 export const knobify = (data = featureData) => ({
   ...data,
   heading: text('Heading', data.heading),
-  layout: select('Layout', ['text-right', 'text-left'], data.layout),
+  links: array('Links', data.links),
+  layout: select('Layout', ['text-right', 'text-left', 'text-bottom'], data.layout),
 });

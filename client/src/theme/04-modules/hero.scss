@@ -1,5 +1,6 @@
 @import '../00-settings/colors';
 @import '../00-settings/breakpoints';
+@import '../01-tools/layout';
 
 $m-hero-body-color: $s-black;
 $m-hero-body-font-size: 14px;
@@ -10,14 +11,13 @@ $m-hero-heading-color: $s-black;
 $m-hero-heading-font-size: 28px;
 $m-hero-heading-font-weight: 600;
 $m-hero-heading-max-length: 30em;
-$m-hero-link-right-margin: 16px;
+$m-hero-link-to-link-spacing: 16px;
 $m-hero-links-top-margin: 32px;
 $m-hero-module-height: 500px;
 $m-hero-module-reflow-breakpoint: $s-breakpoint-l;
-$m-hero-text-container-padding: 32px;
 
 @mixin overlay-text-on-image {
-  .text-container {
+  .m-hero__text-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -29,18 +29,18 @@ $m-hero-text-container-padding: 32px;
 .m-hero {
   position: relative;
 
-  img {
+  .m-hero__image {
     min-width: 100%;
   }
 
-  .heading {
+  .m-hero__heading {
     color: $m-hero-heading-color;
     font-weight: $m-hero-heading-font-weight;
     font-size: $m-hero-heading-font-size;
     max-width: $m-hero-heading-max-length;
   }
 
-  .body {
+  .m-hero__body {
     color: $m-hero-body-color;
     font-weight: $m-hero-body-font-weight;
     font-size: $m-hero-body-font-size;
@@ -48,17 +48,21 @@ $m-hero-text-container-padding: 32px;
   }
 
   /* body should have top margin only when there's something above it */
-  * + .body {
+  * + .m-hero__body {
     margin-top: $m-hero-body-top-margin;
   }
 
-  /* links should have 32px top margin only when there's something above it */
-  * + .links-container {
-    margin-top: $m-hero-links-top-margin;
+  .m-hero__links-container {
+    margin: -$m-hero-link-to-link-spacing / 2;
   }
 
-  .text-container {
-    padding: $m-hero-text-container-padding;
+  /* links should have top margin only when there's something above it */
+  * + .m-hero__links-container {
+    margin-top: $m-hero-links-top-margin - $m-hero-link-to-link-spacing / 2;
+  }
+
+  .m-hero__text-container {
+    @include t-layout-page-side-padding;
     display: flex;
     flex-direction: column;
 
@@ -68,34 +72,19 @@ $m-hero-text-container-padding: 32px;
       justify-content: center;
     }
 
-    &.bottom-left,
-    &.bottom,
-    &.bottom-right {
-      justify-content: flex-end;
-    }
-
-    &.top,
-    &.center,
-    &.bottom {
+    &.center {
       align-items: center;
       text-align: center;
     }
 
-    &.top-right,
-    &.right,
-    &.bottom-right {
+    &.right {
       align-items: flex-end;
       text-align: right;
     }
-  }
 
-  .c-btn {
-    width: 100%;
-  }
-
-  .c-btn + .c-btn {
-    margin-left: 0;
-    margin-top: 16px;
+    .c-btn {
+      margin: $m-hero-link-to-link-spacing / 2;
+    }
   }
 
   /**
@@ -103,22 +92,12 @@ $m-hero-text-container-padding: 32px;
    * We must reflow the text to bottom in IE 11 because it doesn't support srcset and the image will be too short to put text over it.
    */
   @supports (object-fit: cover) {
-    img {
+    .m-hero__image {
       height: $m-hero-module-height;
       object-fit: cover;
     }
 
     @include overlay-text-on-image;
-  }
-
-  @media screen and (min-width: $s-breakpoint-m) {
-    .c-btn {
-      width: auto;
-    }
-    .c-btn + .c-btn {
-      margin-top: 0;
-      margin-left: $m-hero-link-right-margin;
-    }
   }
 
   /**
