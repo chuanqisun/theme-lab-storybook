@@ -1,0 +1,36 @@
+@import '../00-settings/breakpoints';
+
+$gutter-size: 20px;
+
+.c-grid {
+  overflow: hidden; /* prevent overflow caused by negative margin */
+
+  .c-grid__cells {
+    margin: -$gutter-size;
+    padding: $gutter-size 0 0 $gutter-size;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .c-grid__cell {
+    width: 100%;
+    border: 0 solid transparent;
+    border-width: 0 $gutter-size $gutter-size 0;
+  }
+
+  @media screen and (min-width: $s-breakpoint-m) {
+    .c-grid__cell {
+      width: calc(100% / 2);
+    }
+  }
+  @media screen and (min-width: $s-breakpoint-l) {
+    .c-grid__cell {
+      width: calc(100% / 3);
+    }
+  }
+  @media screen and (min-width: $s-breakpoint-xl) {
+    .c-grid__cell {
+      width: calc(100% / 4);
+    }
+  }
+}
