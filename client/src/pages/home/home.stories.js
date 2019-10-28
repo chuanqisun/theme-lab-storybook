@@ -6,7 +6,7 @@ import { Feature, featureDataTextLeft } from '../../modules/feature';
 import { Spacer } from '../../modules/spacer';
 import { Columns, columnsData1To1To1, columnsDataClamped } from '../../modules/columns';
 import { Tile } from '../../modules/tile';
-import { Container, containerDataClamped } from '../../modules/container';
+import { Container, containerDataClampedWithPadding } from '../../modules/container';
 import { Footer } from '../../modules/footer';
 
 export default { title: 'Pages/Home' };
@@ -37,7 +37,7 @@ export const clamped = () => (
     <Header />
     <Hero />
     <Spacer />
-    <Container {...containerDataClamped}>
+    <Container {...containerDataClampedWithPadding}>
       <Feature />
       <Spacer />
       <Feature {...featureDataTextLeft} />

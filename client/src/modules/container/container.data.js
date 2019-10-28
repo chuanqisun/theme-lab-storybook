@@ -1,14 +1,18 @@
-import { boolean } from '@storybook/addon-knobs';
+import { select } from '@storybook/addon-knobs';
 
 export const containerData = {
-  fullBleed: true,
+  layout: 'full-bleed',
 };
 
-export const containerDataClamped = {
-  fullBleed: false,
+export const containerDataClampedWithPadding = {
+  layout: 'clamped-with-padding',
 };
+
+export const containerDataFullWithPadding = {
+  layout: 'full-with-padding',
+}
 
 export const knobify = (data = containerData) => ({
   ...data,
-  fullBleed: boolean('Full bleed', data.fullBleed),
+  layout: select('Layout', ['full-bleed', 'full-with-padding', 'clamped-with-padding'], data.layout),
 });

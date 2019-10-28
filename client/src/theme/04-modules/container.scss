@@ -1,7 +1,10 @@
 @import '../01-tools/layout.scss';
 
 .m-container {
-  &:not(.full-bleed) {
+  &.full-with-padding {
+    @include t-layout-page-side-padding;
+  }
+  &.clamped-with-padding {
     @include t-layout-page-clamp;
     @include t-layout-page-side-padding;
   }

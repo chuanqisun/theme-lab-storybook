@@ -1,0 +1,1 @@
+1. Use a very wide viewport to see the difference between "full bleed with padding" and "clamped with padding".
