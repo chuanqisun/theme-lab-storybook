@@ -1,18 +1,18 @@
-$m-tile-text-container-top-margin: 12px;
-$m-tile-body-top-margin: 4px;
-$m-tile-module-font-size: 14px;
-$m-tile-heading-font-size: 18px;
-$m-tile-heading-font-weight: 400;
+$text-container-top-margin: 12px;
+$body-top-margin: 4px;
+$module-font-size: 14px;
+$heading-font-size: 18px;
+$heading-font-weight: 400;
 
 .m-tile {
-  font-size: $m-tile-module-font-size;
+  font-size: $module-font-size;
 
   .m-tile__img {
     width: 100%;
   }
 
   .m-tile__text-container {
-    margin-top: $m-tile-text-container-top-margin;
+    margin-top: $text-container-top-margin;
     display: flex;
     flex-direction: column;
 
@@ -28,12 +28,12 @@ $m-tile-heading-font-weight: 400;
   }
 
   .m-tile__heading {
-    font-size: $m-tile-heading-font-size;
-    font-weight: $m-tile-heading-font-weight;
+    font-size: $heading-font-size;
+    font-weight: $heading-font-weight;
   }
 
   /* body should have top margin only when there's something above it */
   * + .m-tile__body {
-    margin-top: $m-tile-body-top-margin;
+    margin-top: $body-top-margin;
   }
 }
