@@ -1,19 +1,13 @@
 import React from 'react';
-
-const defaultImage = 'https://via.placeholder.com/224X316';
-const defaultName = 'Product name';
-const defaultPrice = '$100.98';
-const defaultOriginalPrice = undefined;
-const defaultDescription = undefined;
-const defaultRating = undefined;
+import { productCardPropsDefault } from './product-card.data';
 
 export const ProductCard = ({
-  image = defaultImage,
-  name = defaultName,
-  price = defaultPrice,
-  originalPrice = defaultOriginalPrice,
-  description = defaultDescription,
-  rating = defaultRating,
+  image = productCardPropsDefault.image,
+  name = productCardPropsDefault.name,
+  price = productCardPropsDefault.price,
+  originalPrice = productCardPropsDefault.originalPrice,
+  description = productCardPropsDefault.description,
+  rating = productCardPropsDefault.rating,
 }) => (
   <div className="c-product-card">
     <img className="c-product-card__image" src={image} />
