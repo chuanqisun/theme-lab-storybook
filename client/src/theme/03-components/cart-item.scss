@@ -1,0 +1,9 @@
+@import '../00-settings/colors';
+
+$c-cart-item-root-background : $s-black;
+$c-cart-item-root-color : $s-white;
+
+.c-cart-item {
+color: $c-cart-item-root-color;
+background-color: $c-cart-item-root-background;
+}
