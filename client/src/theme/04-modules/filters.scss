@@ -1,0 +1,9 @@
+@import '../00-settings/colors';
+
+$m-filters-root-background : $s-black;
+$m-filters-root-color : $s-white;
+
+.m-filters {
+color: $m-filters-root-color;
+background-color: $m-filters-root-background;
+}

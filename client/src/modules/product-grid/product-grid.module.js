@@ -3,7 +3,12 @@ import { productGridData } from './product-grid.data';
 import { ProductCard } from '../../components/product-card';
 import { Grid } from '../../components/grid';
 
-export const ProductGrid = ({ products = props.propducts, showRating = props.showRating, showDescription = props.showDescription, ...props }) => (
+export const ProductGrid = ({
+  products = productGridData.products,
+  showRating = productGridData.showRating,
+  showDescription = productGridData.showDescription,
+  ...props
+}) => (
   <Grid>
     {products.map(product => {
       const { name, price, originalPrice } = product;
