@@ -1,10 +1,17 @@
 import React from 'react';
 import { tileData } from './tile.data';
 
-export const Tile = ({ image = tileData.image, body = tileData.body, heading = tileData.heading, links = tileData.links, ...props }) => (
+export const Tile = ({
+  image = tileData.image,
+  body = tileData.body,
+  heading = tileData.heading,
+  links = tileData.links,
+  textAlignment = tileData.textAlignment,
+  ...props
+}) => (
   <div className="m-tile">
     <img class="m-tile__img" src={image.src} />
-    <div class="m-tile__text-container">
+    <div class={`m-tile__text-container ${textAlignment}`}>
       {heading && <h2 class="m-tile__heading">{heading}</h2>}
       {body && <p class="m-tile__body">{body}</p>}
       {links && links.length > 0 && (

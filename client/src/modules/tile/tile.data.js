@@ -1,4 +1,4 @@
-import { text, array } from '@storybook/addon-knobs';
+import { text, array, select } from '@storybook/addon-knobs';
 
 export const tileData = {
   image: {
@@ -8,6 +8,7 @@ export const tileData = {
   heading: 'Heading',
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   links: ['Shop now', 'Learn more'],
+  textAlignment: 'left',
 };
 
 export const tileDataNoHeading = {
@@ -20,4 +21,5 @@ export const knobify = (data = tileData) => ({
   body: text('Body', data.body),
   heading: text('Heading', data.heading),
   links: array('Links', data.links),
+  textAlignment: select('Text alignment', ['left', 'center', 'right'], data.textAlignment),
 });
