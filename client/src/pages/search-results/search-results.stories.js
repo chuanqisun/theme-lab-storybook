@@ -6,7 +6,7 @@ import { Header } from '../../modules/header';
 import { Spacer } from '../../modules/spacer';
 import { Columns, columnsData1To1To1, columnsData1To2 } from '../../modules/columns';
 import { Tile } from '../../modules/tile';
-import { Container, containerDataClamped } from '../../modules/container';
+import { Container, containerDataFullWithPadding } from '../../modules/container';
 import { Footer } from '../../modules/footer';
 
 export default { title: 'Pages/Search results' };
@@ -17,10 +17,12 @@ export const fullBleed = () => (
     <Header />
     <Spacer />
     {/* This should be replaced with a dedicated container */}
-    <Columns {...columnsData1To2}>
-      <Filters />
-      <ProductGrid />
-    </Columns>
+    <Container {...containerDataFullWithPadding}>
+      <div className="temp-search-results">
+        <Filters />
+        <ProductGrid />
+      </div>
+    </Container>
     <Spacer />
     <Footer />
   </>

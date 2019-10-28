@@ -7,7 +7,7 @@ $gutter-size-v: 32px;
   overflow: hidden; /* prevent overflow caused by negative margin */
 
   .c-grid__cells {
-    margin: -$gutter-size-v $gutter-size-h;
+    margin: -$gutter-size-v -$gutter-size-h;
     padding: $gutter-size-v 0 0 $gutter-size-h;
     display: flex;
     flex-wrap: wrap;
