@@ -1,6 +1,6 @@
 import { text, array } from '@storybook/addon-knobs';
 
-export const cardData = {
+export const tileData = {
   image: {
     src: 'https://via.placeholder.com/352X432',
     sources: [],
@@ -10,12 +10,12 @@ export const cardData = {
   links: ['Shop now', 'Learn more'],
 };
 
-export const cardDataNoHeading = {
-  ...cardData,
+export const tileDataNoHeading = {
+  ...tileData,
   heading: '',
 };
 
-export const knobify = (data = cardData) => ({
+export const knobify = (data = tileData) => ({
   ...data,
   body: text('Body', data.body),
   heading: text('Heading', data.heading),

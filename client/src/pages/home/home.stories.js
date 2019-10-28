@@ -5,7 +5,7 @@ import { Header } from '../../modules/header';
 import { Feature, featureDataTextLeft } from '../../modules/feature';
 import { Spacer } from '../../modules/spacer';
 import { Columns, columnsData1To1To1, columnsDataClamped } from '../../modules/columns';
-import { Card } from '../../modules/card';
+import { Tile } from '../../modules/tile';
 import { Container, containerDataClamped } from '../../modules/container';
 import { Footer } from '../../modules/footer';
 
@@ -22,9 +22,9 @@ export const fullBleed = () => (
     <Feature {...featureDataTextLeft} />
     <Spacer />
     <Columns {...columnsData1To1To1} fullBleed={false}>
-      <Card />
-      <Card />
-      <Card />
+      <Tile />
+      <Tile />
+      <Tile />
     </Columns>
     <Spacer />
     <Footer />
@@ -43,9 +43,9 @@ export const clamped = () => (
       <Feature {...featureDataTextLeft} />
       <Spacer />
       <Columns {...columnsData1To1To1}>
-        <Card />
-        <Card />
-        <Card />
+        <Tile />
+        <Tile />
+        <Tile />
       </Columns>
     </Container>
     <Spacer />
