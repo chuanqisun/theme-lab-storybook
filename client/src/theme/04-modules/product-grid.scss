@@ -1,0 +1,10 @@
+@import '../00-settings/colors';
+
+.m-product-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  .c-product-card {
+    width: calc(100% / 3);
+  }
+}
