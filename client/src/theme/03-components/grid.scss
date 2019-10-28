@@ -14,16 +14,11 @@ $gutter-size-v: 32px;
   }
 
   .c-grid__cell {
-    width: 100%;
+    width: calc(100% / 2);
     border: 0 solid transparent;
     border-width: 0 $gutter-size-h $gutter-size-v 0;
   }
 
-  @media screen and (min-width: $s-breakpoint-m) {
-    .c-grid__cell {
-      width: calc(100% / 2);
-    }
-  }
   @media screen and (min-width: $s-breakpoint-l) {
     .c-grid__cell {
       width: calc(100% / 3);
