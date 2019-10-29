@@ -1,7 +1,7 @@
 .temp-search-results {
   display: flex;
 
-  :first-child {
+  > :first-child {
     flex: 0 0 auto;
   }
 }
