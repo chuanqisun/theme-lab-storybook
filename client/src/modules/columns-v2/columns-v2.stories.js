@@ -1,6 +1,6 @@
 import { withKnobs } from '@storybook/addon-knobs';
 import React from 'react';
-import { columnsData, columnsData1To2, columnsData2To1, columnsData1To1To1, knobify } from './columns-v2.data';
+import { columnsData, columnsData1To2, columnsData2To1, columnsData1To1To1, columnsDataFullWithPadding, columnsDataClampedWithPadding, knobify } from './columns-v2.data';
 import { ColumnsV2 } from './columns-v2.module';
 import notes from './columns-v2.notes.md';
 
@@ -33,6 +33,20 @@ export const ratio2To1 = () => (
 export const ratio1To1To1 = () => (
   <ColumnsV2 {...knobify(columnsData1To1To1)}>
     <div>{sampleText}</div>
+    <div>{sampleText}</div>
+    <div>{sampleText}</div>
+  </ColumnsV2>
+);
+
+export const fullWithPadding = () => (
+  <ColumnsV2 {...knobify(columnsDataFullWithPadding)}>
+    <div>{sampleText}</div>
+    <div>{sampleText}</div>
+  </ColumnsV2>
+);
+
+export const clampedWithPadding = () => (
+  <ColumnsV2 {...knobify(columnsDataClampedWithPadding)}>
     <div>{sampleText}</div>
     <div>{sampleText}</div>
   </ColumnsV2>

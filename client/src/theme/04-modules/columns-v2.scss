@@ -1,10 +1,19 @@
 @import '../00-settings/breakpoints';
+@import '../01-tools/layout.scss';
 
 $gutter-size-h: 20px;
 $gutter-size-v: 32px;
 
 .m-columns-v2 {
   overflow: hidden; /* prevent overflow caused by negative margin */
+
+  &.full-with-padding {
+    @include t-layout-page-side-padding;
+  }
+  &.clamped-with-padding {
+    @include t-layout-page-clamp;
+    @include t-layout-page-side-padding;
+  }
 
   .m-columns-v2__column-container {
     margin: (-$gutter-size-v) (-$gutter-size-h);
