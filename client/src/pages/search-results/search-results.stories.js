@@ -18,7 +18,7 @@ export const fullBleed = () => (
     <Spacer />
     {/* This should be replaced with a dedicated container */}
     <Container {...containerDataClampedWithPadding}>
-      <div className="temp-search-results">
+      <div className="hack-search-results">
         <Filters />
         <ProductGrid />
       </div>
