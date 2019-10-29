@@ -13,7 +13,7 @@ $grid-gap: 20px;
     margin-top: $grid-gap;
   }
 
-  @media screen and (min-width: $s-breakpoint-l) {
+  @media screen and (min-width: $s-breakpoint-m) {
     display: grid;
     grid-gap: $grid-gap;
     grid-template-columns: auto; // default is single column
