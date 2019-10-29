@@ -1,0 +1,54 @@
+@import '../00-settings/breakpoints';
+
+$gutter-size-h: 20px;
+$gutter-size-v: 32px;
+
+.m-columns-v2 {
+  overflow: hidden; /* prevent overflow caused by negative margin */
+
+  .m-columns-v2__column-container {
+    margin: (-$gutter-size-v) (-$gutter-size-h);
+    padding: $gutter-size-v 0 0 $gutter-size-h;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .m-columns-v2__column {
+    width: 100%;
+    border: 0 solid transparent;
+    border-width: 0 $gutter-size-h $gutter-size-v 0;
+  }
+
+  @media screen and (min-width: $s-breakpoint-m) {
+    &.ratio-1-1 {
+      .m-columns-v2__column {
+        width: calc(100% / 2);
+      }
+    }
+    &.ratio-1-2 {
+      .m-columns-v2__column {
+        &:first-child {
+          width: calc(100% / 3);
+        }
+        &:nth-child(2) {
+          width: calc(100% * 2 / 3);
+        }
+      }
+    }
+    &.ratio-2-1 {
+      .m-columns-v2__column {
+        &:first-child {
+          width: calc(100% * 2 / 3);
+        }
+        &:nth-child(2) {
+          width: calc(100% / 3);
+        }
+      }
+    }
+    &.ratio-1-1-1 {
+      .m-columns-v2__column {
+        width: calc(100% / 3);
+      }
+    }
+  }
+}
