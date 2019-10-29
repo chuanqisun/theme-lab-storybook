@@ -5,6 +5,7 @@ import { Header } from '../../modules/header';
 import { Feature, featureDataTextLeft } from '../../modules/feature';
 import { Spacer } from '../../modules/spacer';
 import { Columns, columnsData1To1To1, columnsDataClamped } from '../../modules/columns';
+import { ColumnsV2, columnsData1To1To1 as columnsData1To1To1V2 } from '../../modules/columns-v2';
 import { Tile } from '../../modules/tile';
 import { Container, containerDataClampedWithPadding } from '../../modules/container';
 import { Footer } from '../../modules/footer';
@@ -21,11 +22,11 @@ export const fullBleed = () => (
     <Spacer />
     <Feature {...featureDataTextLeft} />
     <Spacer />
-    <Columns {...columnsData1To1To1} fullBleed={false}>
+    <ColumnsV2 {...columnsData1To1To1V2} layout="full-with-padding">
       <Tile />
       <Tile />
       <Tile />
-    </Columns>
+    </ColumnsV2>
     <Spacer />
     <Footer />
   </>
