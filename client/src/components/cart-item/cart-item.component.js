@@ -15,16 +15,18 @@ export const CartItem = props => (
           <div className="c-ci__dimension"><dt>Unit price</dt><dd>$109.99</dd></div>
         </dl>
       </div>
-      <select className="c-ci__quantity" name="quantity">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
+      <div className="c-ci__quantity-info">
+        <select className="c-ci__quantity" name="quantity">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
       <div className="c-ci__price-info">
-        <s>$109.99</s>
-        <span>$104.99</span>
+        <s className="c-ci__price-old">$109.99</s>
+        <span className="c-ci__price-current">$104.99</span>
       </div>
       <div className="c-ci__shipping-info">
         <div className="c-ci__shipping-option">
