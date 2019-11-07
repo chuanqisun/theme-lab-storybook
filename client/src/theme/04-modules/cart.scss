@@ -1,0 +1,36 @@
+@import '../00-settings/colors';
+
+
+.m-cart {
+
+
+  // just for demo
+  .m-cart__summary {
+    font-size: 18px;
+    padding: 20px;
+    height: 400px;
+    color: white;
+    background-color: gray;
+  }
+
+  .m-cart__divider {
+    margin: 20px 0;
+  }
+
+  @media screen and (min-width: $s-breakpoint-l) {
+    display: flex;
+
+    .m-cart__items {
+      margin-right: 40px;
+      flex-grow: 1;
+    }
+  
+    .m-cart__summary {
+      flex-grow: 1;
+      flex-basis: 240px;
+      max-width: 320px;
+    }
+
+  }
+}
+
