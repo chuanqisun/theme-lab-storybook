@@ -9,13 +9,13 @@ export const ProductGrid = ({
   showDescription = productGridData.showDescription,
   ...props
 }) => (
-  <Grid>
-    {products.map(product => {
-      const { name, price, originalPrice } = product;
-      const rating = showRating ? product.rating : undefined;
-      const description = showDescription ? product.description : undefined;
+    <Grid>
+      {products.map((product, i) => {
+        const { name, price, originalPrice } = product;
+        const rating = showRating ? product.rating : undefined;
+        const description = showDescription ? product.description : undefined;
 
-      return <ProductCard name={name} originalPrice={originalPrice} price={price} rating={rating} description={description} />;
-    })}
-  </Grid>
-);
+        return <ProductCard key={i} name={name} originalPrice={originalPrice} price={price} rating={rating} description={description} />;
+      })}
+    </Grid>
+  );

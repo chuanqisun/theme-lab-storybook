@@ -55,4 +55,9 @@ a.c-btn {
       margin-left: $c-btn-icon-to-text-gap;
     }
   }
+
+  &.c-btn--link {
+    background-color: transparent;
+    text-decoration: underline;
+  }
 }

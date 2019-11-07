@@ -41,3 +41,4 @@ export const ghostSquare = () => (
     <Icon name="close" label="close" />
   </button>
 );
+export const linkButton = () => <button className="c-btn c-btn--link">Move to wishlist</button>;

@@ -7,8 +7,8 @@ export const ColumnsV2 = ({ layout = columnsData.layout, columns = columnsData.c
   return (
     <div className={`m-columns-v2 ${columnsClassName} ${layout}`}>
       <div className="m-columns-v2__column-container">
-        {React.Children.map(props.children, child => (
-          <div className="m-columns-v2__column">{child}</div>
+        {React.Children.map(props.children, (child, i) => (
+          <div key={i} className="m-columns-v2__column">{child}</div>
         ))}
       </div>
     </div>
