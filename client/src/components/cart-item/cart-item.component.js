@@ -5,6 +5,7 @@ export const CartItem = props => (
     <img className="c-cli__image" src="https://via.placeholder.com/160X240" alt="" />
     <div className="c-cli__content-container">
       <div className="c-cli__product-info">
+        <div>Brand name</div>
         <div>Product name</div>
         <div>Color: Honey</div>
         <div>Size: XXS</div>
