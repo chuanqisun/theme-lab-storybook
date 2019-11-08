@@ -1,8 +1,11 @@
 @import '../00-settings/colors';
 
+$divider-vertical-margin: 20px;
+$cart-items-right-margin: 40px;
+$summary-min-width: 320px;
+$summary-max-width: 480px;
 
 .m-cart {
-
 
   // just for demo
   .m-cart__summary {
@@ -14,21 +17,20 @@
   }
 
   .m-cart__divider {
-    margin: 20px 0;
+    margin: $divider-vertical-margin 0;
   }
 
   @media screen and (min-width: $s-breakpoint-l) {
     display: flex;
 
     .m-cart__items {
-      margin-right: 40px;
+      margin-right: $cart-items-right-margin;
       flex-grow: 1;
     }
   
     .m-cart__summary {
-      flex-grow: 1;
-      flex-basis: 240px;
-      max-width: 320px;
+      flex: 1 0 $summary-min-width;
+      max-width: $summary-max-width;
     }
 
   }
