@@ -73,6 +73,26 @@ $toolbar-divider-height: 20px;
   }
 }
 
+.mc-categories {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+  }
+
+  a {
+    display: inline-block;
+    padding-right: 80px;
+    font: $s-font-16;
+    color: #323130;
+    text-decoration: none;
+  }
+}
+
 $menu-min-width: 256px;
 $menu-padding: 4px 0 20px;
 
@@ -92,8 +112,7 @@ $menu-padding: 4px 0 20px;
   a {
     display: block;
     padding: 10px 32px;
-    font-size: 16px;
-    font-weight: 600;
+    font: $s-font-16-sb;
     color: #323130;
     text-decoration: none;
   }
