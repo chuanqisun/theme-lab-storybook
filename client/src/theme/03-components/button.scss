@@ -30,6 +30,7 @@ a.c-btn {
   border-radius: $c-btn-border-radius;
 
   &.c-btn--ghost {
+    font: $s-font-14;
     border-color: transparent;
     background-color: transparent;
   }
@@ -62,6 +63,7 @@ a.c-btn {
   }
 
   &.c-btn--link {
+    font: $s-font-14;
     border-color: transparent;
     background-color: transparent;
     text-decoration: underline;
