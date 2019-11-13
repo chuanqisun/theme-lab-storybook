@@ -75,6 +75,8 @@ $toolbar-divider-height: 20px;
 }
 
 .mc-categories {
+  color: $s-gray-dark;
+
   ul {
     list-style: none;
     padding: 0;
@@ -89,7 +91,7 @@ $toolbar-divider-height: 20px;
     display: inline-block;
     padding-right: 80px;
     font: $s-font-16;
-    color: #323130;
+    color: inherit;
     text-decoration: none;
   }
 }
@@ -98,6 +100,7 @@ $menu-min-width: 256px;
 $menu-padding: 4px 0 20px;
 
 .mc-dropdown-menu {
+  color: $s-gray-dark;
   min-width: $menu-min-width;
   position: absolute;
   background: $s-white;
@@ -114,7 +117,7 @@ $menu-padding: 4px 0 20px;
     display: block;
     padding: 10px 32px;
     font: $s-font-16-sb;
-    color: #323130;
+    color: inherit;
     text-decoration: none;
   }
 }
