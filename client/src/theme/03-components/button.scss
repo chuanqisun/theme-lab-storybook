@@ -9,6 +9,7 @@ $c-btn-min-width: 160px;
 $c-btn-side-padding: 16px;
 $c-btn-height: 32px;
 $c-btn-icon-to-text-gap: 4px;
+$c-btn-icon-font-size: 16px;
 $c-btn-border-radius: 2px;
 
 a.c-btn {
@@ -46,6 +47,7 @@ a.c-btn {
   }
 
   &.c-btn--square {
+    font-size: $c-btn-icon-font-size;
     width: $c-btn-height;
     height: $c-btn-height;
   }

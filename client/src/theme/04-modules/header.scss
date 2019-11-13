@@ -121,3 +121,17 @@ $menu-padding: 4px 0 20px;
     text-decoration: none;
   }
 }
+
+.mc-full-screen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: $s-modal-overlay;
+}
+
+.mc-full-screen-menu__content {
+  background-color: $s-white;
+}
