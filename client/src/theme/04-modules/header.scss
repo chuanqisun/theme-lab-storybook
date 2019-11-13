@@ -1,4 +1,5 @@
 @import "../00-settings/colors";
+@import "../00-settings/shadows";
 @import "../00-settings/typography";
 @import "../00-settings/breakpoints";
 @import "../01-tools/layout";
@@ -69,5 +70,31 @@ $toolbar-divider-height: 20px;
       background-color: $s-gray;
       margin: ($toolbar-items-height - $toolbar-divider-height) / 2 0;
     }
+  }
+}
+
+$menu-min-width: 256px;
+$menu-padding: 4px 0 20px;
+
+.mc-dropdown-menu {
+  min-width: $menu-min-width;
+  position: absolute;
+  background: $s-white;
+  box-shadow: $s-dropdown-shadow;
+  padding: $menu-padding;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    display: block;
+    padding: 10px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #323130;
+    text-decoration: none;
   }
 }
