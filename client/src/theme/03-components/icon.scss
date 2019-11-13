@@ -1,12 +1,12 @@
-@import '../00-settings/iconography';
-@import '../01-tools/visually-hidden';
+@import "../00-settings/iconography";
+@import "../01-tools/visually-hidden";
 
 /*
   Your use of the content in the files referenced here is subject to the terms of the license at https://aka.ms/fabric-assets-license
 */
 @font-face {
   font-family: $icon-font-family;
-  src: url('//theme-lab-cdn.netlify.com/fonts/FabExMDL2.woff') format('woff');
+  src: url("//theme-lab-cdn.netlify.com/fonts/FabExMDL2.woff") format("woff");
 }
 
 @mixin use-glyph($unicode) {
@@ -31,16 +31,19 @@
   &.c-icon--cart {
     @include use-glyph($shopping-bag);
   }
-  &.c-icon--wishlist {
-    @include use-glyph($heart);
+  &.c-icon--close {
+    @include use-glyph($x-shape);
   }
-  &.c-icon--search {
-    @include use-glyph($magnifying-glass);
+  &.c-icon--mobile-nav {
+    @include use-glyph($hamburger);
   }
   &.c-icon--go-shop {
     @include use-glyph($arrow-right);
   }
-  &.c-icon--close {
-    @include use-glyph($x-shape);
+  &.c-icon--search {
+    @include use-glyph($magnifying-glass);
+  }
+  &.c-icon--wishlist {
+    @include use-glyph($heart);
   }
 }

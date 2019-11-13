@@ -1,52 +1,73 @@
-@import '../00-settings/typography';
-@import '../01-tools/layout.scss';
+@import "../00-settings/colors";
+@import "../00-settings/typography";
+@import "../00-settings/breakpoints";
+@import "../01-tools/layout";
 
-$m-header-bottom-padding: 32px;
-$m-header-category-gap: 24px;
-$m-header-font-family: $s-primary-font-family;
-$m-header-nav-top-margin: 32px;
-$m-header-toolbar-items-gap: 8px;
-$m-header-top-padding: 20px;
-$m-heading-side-padding: 60px;
+$root-bottom-padding: 32px;
+$root-font-family: $s-primary-font-family;
+$root-top-padding: 20px;
+$category-gap: 24px;
+$toolbar-items-gap: 8px;
+$toolbar-items-height: 48px;
+$toolbar-divider-height: 20px;
 
 .m-header {
-  font-family: $m-header-font-family;
+  font-family: $root-font-family;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding-top: $m-header-top-padding;
-  padding-bottom: $m-header-bottom-padding;
+  padding-top: $root-top-padding;
+  padding-bottom: $root-bottom-padding;
   @include t-layout-page-side-padding;
+  padding: 0;
 
-  .m-header__logo {
+  .m-header__hamburger {
+    margin-right: $toolbar-items-gap;
+  }
+
+  .m-header__logo-container {
     margin-right: auto;
   }
 
-  .m-header__search {
+  .m-header__search-label {
+    display: none;
   }
 
   .m-header__account {
-    margin-left: $m-header-toolbar-items-gap;
+    display: none; // not visible in mobile
+    margin-left: $toolbar-items-gap;
   }
 
   .m-header__wishlist {
-    margin-left: $m-header-toolbar-items-gap;
-  }
-
-  .m-header__cart {
-    margin-left: $m-header-toolbar-items-gap;
-  }
-
-  .m-header__nav {
-    width: 100%;
-  }
-
-  .m-header__nav-ul {
-    display: flex;
-    margin-top: $m-header-nav-top-margin;
+    display: none; // not visible in mobile
+    margin-left: $toolbar-items-gap;
   }
 
   .m-header__nav-li {
-    margin-right: $m-header-category-gap;
+    margin-right: $category-gap;
+  }
+
+  @media screen and (min-width: $s-breakpoint-l) {
+    .m-header__hamburger {
+      display: none;
+    }
+    .m-header__account {
+      display: flex;
+    }
+    .m-header__wishlist {
+      display: flex;
+    }
+    .m-header__search-label {
+      display: inline;
+    }
+    .m-header__cart {
+      margin-left: $toolbar-items-gap;
+    }
+    .m-header__divider {
+      width: 1px;
+      height: $toolbar-divider-height;
+      background-color: $s-gray;
+      margin: ($toolbar-items-height - $toolbar-divider-height) / 2 0;
+    }
   }
 }

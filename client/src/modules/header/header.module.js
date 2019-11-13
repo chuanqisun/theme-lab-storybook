@@ -1,37 +1,54 @@
-import React from 'react';
-import { headerData } from './header.data';
-import { Icon } from '../../components/icon';
+import React from "react";
+import { headerData } from "./header.data";
+import { Icon } from "../../components/icon";
 
-export const Header = ({ logo = headerData.logo, account = headerData.account, cart = headerData.cart, nav = headerData.nav, ...props }) => (
+export const Header = ({
+  logo = headerData.logo,
+  account = headerData.account,
+  cart = headerData.cart,
+  ...props
+}) => (
   <header className="m-header">
-    <img className="m-header__logo" src={logo.src} />
-    <button className="c-btn c-btn--icon-before m-header__search">
+    <button className="c-btn c-btn--ghost c-btn--square m-header__hamburger">
+      <Icon name="mobile-nav" label="menu" />
+    </button>
+    <picture className="m-header__logo-container">
+      {logo.sources.map((source, i) => (
+        <source key={i} media={source.media} srcSet={source.srcSet} />
+      ))}
+      <img className="m-header__logo" src={logo.src} />
+    </picture>
+    <button className="c-btn c-btn--ghost c-btn--icon-before m-header__search">
       <Icon name="search" />
-      Search
+      <span className="m-header__search-label">Search</span>
     </button>
     {account.signedIn ? (
-      <a className="c-btn m-header__account" href="javascript:void(0)">
-        My account
+      <a
+        className="c-btn c-btn--ghost m-header__account"
+        href="javascript:void(0)"
+      >
+        Adriana
       </a>
     ) : (
-      <a className="c-btn m-header__account" href="javascript:void(0)">
+      <a
+        className="c-btn c-btn--ghost m-header__account"
+        href="javascript:void(0)"
+      >
         Sign in
       </a>
     )}
-    <a className="c-btn c-btn--square m-header__wishlist" href="javascript:void(0)">
+    <a
+      className="c-btn c-btn--ghost c-btn--square m-header__wishlist"
+      href="javascript:void(0)"
+    >
       <Icon name="wishlist" label="wishlist" />
     </a>
-    <a className="c-btn m-header__cart c-btn--icon-before" href="javascript:void(0)">
+    <div className="m-header__divider" />
+    <a
+      className="c-btn c-btn--ghost m-header__cart c-btn--icon-before"
+      href="javascript:void(0)"
+    >
       <Icon name="cart" label="cart" />({cart.itemCount})
     </a>
-    <nav className="m-header__nav">
-      <ul className="m-header__nav-ul">
-        {nav.categories.map(category => (
-          <li className="m-header__nav-li" key={category}>
-            <a href="javascript:void(0)">{category}</a>
-          </li>
-        ))}
-      </ul>
-    </nav>
   </header>
 );

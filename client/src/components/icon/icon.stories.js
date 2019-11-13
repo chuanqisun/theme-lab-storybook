@@ -1,8 +1,8 @@
-import React from 'react';
-import { Icon } from './icon.component';
-import notes from './icon.notes.md';
+import React from "react";
+import { Icon } from "./icon.component";
+import notes from "./icon.notes.md";
 
-export default { title: 'Components/Icon', parameters: { notes } };
+export default { title: "Components/Icon", parameters: { notes } };
 
 export const fullIst = () => (
   <>
@@ -11,6 +11,8 @@ export const fullIst = () => (
     <Icon title="close" name="close" />
     &nbsp;
     <Icon title="go-shop" name="go-shop" />
+    &nbsp;
+    <Icon title="mobile-nav" name="mobile-nav" />
     &nbsp;
     <Icon title="search" name="search" />
     &nbsp;
