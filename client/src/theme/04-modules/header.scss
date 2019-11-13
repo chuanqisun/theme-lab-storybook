@@ -13,6 +13,7 @@ $toolbar-items-height: 48px;
 $toolbar-divider-height: 20px;
 
 .m-header {
+  color: $s-gray-dark;
   font-family: $root-font-family;
   display: flex;
   flex-wrap: wrap;

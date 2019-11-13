@@ -1,13 +1,15 @@
-@import '../00-settings/colors';
+@import "../00-settings/colors";
 
-$c-btn-basic-color: $s-black;
-$c-btn-basic-bg: $s-gray;
+$c-btn-basic-color: $s-gray-dark;
+$c-btn-basic-bg: $s-white;
+$c-btn-basic-border-color: $s-gray-light;
 $c-btn-primary-color: $s-white;
 $c-btn-primary-bg: $s-blue;
 $c-btn-min-width: 160px;
-$c-btn-side-padding: 12px;
-$c-btn-height: 48px;
+$c-btn-side-padding: 16px;
+$c-btn-height: 32px;
 $c-btn-icon-to-text-gap: 4px;
+$c-btn-border-radius: 2px;
 
 a.c-btn {
   display: inline-flex;
@@ -17,20 +19,23 @@ a.c-btn {
 .c-btn {
   align-items: center;
   background-color: $c-btn-basic-bg;
-  border: none;
+  border: 1px solid $c-btn-basic-border-color;
   color: $c-btn-basic-color;
   cursor: pointer;
   display: inline-flex;
-  font-family: $s-primary-font-family;
+  font: $s-font-14-sb;
   height: $c-btn-height;
   justify-content: center;
   padding: 0 $c-btn-side-padding;
+  border-radius: $c-btn-border-radius;
 
   &.c-btn--ghost {
+    border-color: transparent;
     background-color: transparent;
   }
 
   &.c-btn--primary {
+    border-color: transparent;
     background-color: $c-btn-primary-bg;
     color: $c-btn-primary-color;
   }
@@ -57,6 +62,7 @@ a.c-btn {
   }
 
   &.c-btn--link {
+    border-color: transparent;
     background-color: transparent;
     text-decoration: underline;
   }
