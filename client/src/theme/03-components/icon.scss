@@ -28,11 +28,20 @@
     @include visually-hidden;
   }
 
+  &.c-icon--account {
+    @include use-glyph($dummy-figure);
+  }
   &.c-icon--cart {
     @include use-glyph($shopping-bag);
   }
   &.c-icon--close {
     @include use-glyph($x-shape);
+  }
+  &.c-icon--navigate-back {
+    @include use-glyph($chevron-left);
+  }
+  &.c-icon--navigate-to {
+    @include use-glyph($chevron-right);
   }
   &.c-icon--mobile-nav {
     @include use-glyph($hamburger);

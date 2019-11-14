@@ -21,7 +21,7 @@ $toolbar-divider-height: 20px;
   padding-top: $root-top-padding;
   padding-bottom: $root-bottom-padding;
   @include t-layout-page-side-padding;
-  padding: 0;
+  padding-top: 20px;
 
   .m-header__hamburger {
     margin-right: $toolbar-items-gap;
@@ -49,6 +49,10 @@ $toolbar-divider-height: 20px;
     margin-right: $category-gap;
   }
 
+  .mc-categories {
+    display: none;
+  }
+
   @media screen and (min-width: $s-breakpoint-l) {
     .m-header__hamburger {
       display: none;
@@ -71,10 +75,15 @@ $toolbar-divider-height: 20px;
       background-color: $s-gray;
       margin: ($toolbar-items-height - $toolbar-divider-height) / 2 0;
     }
+    .mc-categories {
+      margin-top: 32px;
+      display: block;
+    }
   }
 }
 
 .mc-categories {
+  width: 100%;
   color: $s-gray-dark;
 
   ul {
@@ -89,10 +98,16 @@ $toolbar-divider-height: 20px;
 
   a {
     display: inline-block;
-    padding-right: 80px;
+    padding-right: 64px;
     font: $s-font-16;
     color: inherit;
     text-decoration: none;
+  }
+
+  @media screen and (min-width: $s-breakpoint-xl) {
+    a {
+      padding-right: 80px;
+    }
   }
 }
 
@@ -132,6 +147,66 @@ $menu-padding: 4px 0 20px;
   background-color: $s-modal-overlay;
 }
 
+$full-screen-menu-item-height: 48px;
+
 .mc-full-screen-menu__content {
   background-color: $s-white;
+  overflow-y: auto;
+  webkit-overflow-scrolling: touch; // keep scrolling momentum
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 66.667%;
+  min-width: 280px;
+}
+
+.mc-full-screen-menu__items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mc-full-screen-menu__link {
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  font: $s-font-16;
+  height: $full-screen-menu-item-height;
+  padding: 0 20px;
+  text-decoration: none;
+  width: 100%;
+}
+
+.mc-full-screen-menu__link--as-heading {
+  margin-top: 8px;
+  font: $s-font-16-sb;
+}
+
+.mc-full-screen-menu__divider {
+  border: none;
+  height: 1px;
+  background-color: $s-gray-light;
+  margin: 8px 0;
+}
+
+.mc-full-screen-menu__close {
+  margin: 8px 0 0 8px;
+}
+
+.mc-full-screen-menu__category-name {
+  margin-right: auto;
+  font: $s-font-16-sb;
+}
+
+.full-screen-menu__category-name--as-heading {
+  margin-left: 16px;
+}
+
+.mc-full-screen-menu__action-name {
+  margin-left: 16px;
 }

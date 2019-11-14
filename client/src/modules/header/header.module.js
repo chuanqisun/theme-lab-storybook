@@ -1,6 +1,7 @@
 import React from "react";
 import { headerData } from "./header.data";
 import { Icon } from "../../components/icon";
+import { Categories } from "./components/categories.component";
 
 export const Header = ({
   logo = headerData.logo,
@@ -50,5 +51,6 @@ export const Header = ({
     >
       <Icon name="cart" label="cart" />({cart.itemCount})
     </a>
+    <Categories />
   </header>
 );
