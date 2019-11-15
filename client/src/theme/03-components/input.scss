@@ -1,0 +1,16 @@
+@import "../00-settings/colors";
+@import "../00-settings/typography";
+@import "../00-settings/shape";
+
+$c-root-height: 32px;
+$c-root-side-padding: 8px;
+
+.c-input[type="text"] {
+  height: $c-root-height;
+  background-color: $s-white;
+  padding-left: 8px;
+  padding-right: 8px;
+  font: $s-font-14;
+  border: 1px solid $s-gray;
+  border-radius: $s-border-radius;
+}
