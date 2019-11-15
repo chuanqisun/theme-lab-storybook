@@ -6,6 +6,7 @@ $c-root-height: 32px;
 $c-root-side-padding: 8px;
 
 .c-input[type="text"] {
+  width: 100%;
   height: $c-root-height;
   background-color: $s-white;
   padding-left: 8px;
@@ -13,4 +14,28 @@ $c-root-side-padding: 8px;
   font: $s-font-14;
   border: 1px solid $s-gray;
   border-radius: $s-border-radius;
+}
+
+.c-input[invalid] {
+  border-color: $s-error;
+}
+
+.c-field {
+  display: flex;
+  flex-direction: column;
+
+  .c-label {
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.c-label__content {
+  font: $s-font-14-sb;
+}
+
+.c-label__error {
+  color: $s-error;
+  font: $s-font-12;
 }
