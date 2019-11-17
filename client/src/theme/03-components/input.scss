@@ -1,13 +1,20 @@
 @import "../00-settings/colors";
 @import "../00-settings/typography";
 @import "../00-settings/shape";
+@import "../01-tools//encode-hex-color";
 
-$c-root-height: 32px;
-$c-root-side-padding: 8px;
+$c-input-box-height: 32px;
+$c-input-item-height: 36px;
+$c-input-item-stack-padding: 8px;
+$c-input-box-padding: 8px;
+$c-chevron-color: $s-gray-dark;
+$c-inlie-label-left-margin: 8px;
+$c-checkbox-size: 20px;
+$c-radio-size: 20px;
 
-.c-input[type="text"] {
+.c-input {
   width: 100%;
-  height: $c-root-height;
+  height: $c-input-box-height;
   background-color: $s-white;
   padding-left: 8px;
   padding-right: 8px;
@@ -16,26 +23,75 @@ $c-root-side-padding: 8px;
   border-radius: $s-border-radius;
 }
 
+.c-input--select {
+  /* hide the browser default chevron */
+  appearance: none;
+  /* rshow chevron with a custom svg string */
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9.70898L0.146484 3.85547L0.855469 3.14648L6 8.29102L11.1445 3.14648L11.8535 3.85547L6 9.70898Z' fill='#{encodeColor($c-chevron-color)}'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-position: right $c-input-box-padding center;
+}
+
 .c-input[invalid] {
   border-color: $s-error;
+}
+
+.c-checkbox {
+  margin: 0;
+  width: $c-checkbox-size;
+  height: $c-checkbox-size;
+}
+
+.c-radio {
+  margin: 0;
+  width: $c-radio-size;
+  height: $c-radio-size;
 }
 
 .c-field {
   display: flex;
   flex-direction: column;
-
-  .c-label {
-    margin-bottom: 4px;
-    display: flex;
-    flex-direction: column;
-  }
 }
 
-.c-label__content {
+.c-field__prompt {
+  margin-bottom: 4px;
+  display: flex;
+  flex-direction: column;
+}
+
+.c-label {
+  display: flex;
+  flex-wrap: wrap;
+}
+.c-label--stretch {
+  width: 100%;
+}
+.c-label__near {
+  margin-right: auto;
+}
+
+.c-label__title {
   font: $s-font-14-sb;
 }
-
+.c-label__body {
+  font: $s-font-14;
+}
 .c-label__error {
   color: $s-error;
   font: $s-font-12;
+}
+
+.c-input-item {
+  display: flex;
+  // use padding to increase hit target size
+  padding-top: $c-input-item-stack-padding;
+  padding-bottom: $c-input-item-stack-padding;
+}
+
+.c-input-item__control {
+  flex-shrink: 0;
+}
+
+.c-input-item__label {
+  margin-left: $c-inlie-label-left-margin;
 }

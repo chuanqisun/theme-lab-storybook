@@ -1,0 +1,12 @@
+/// convert css hex color (e.g. #AE3130) to data url string (e.g. %23AE3130)
+/// reference: https://gist.github.com/keeperofkeys/45b14189f49017171a3d48f12c6ccf69
+@function encodeColor($string) {
+  @if type-of($string) == "color" {
+    @if $string != transparent {
+      $hex: str-slice(ie-hex-str($string), 4);
+      $string: unquote("#{$hex}");
+      $string: "%23" + $string;
+    }
+  }
+  @return $string;
+}
