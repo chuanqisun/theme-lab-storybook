@@ -1,0 +1,16 @@
+@import "../00-settings/typography";
+
+$item-gap: 20px;
+$title-bottom-margin: 12px;
+
+.c-form {
+}
+
+.c-form__title {
+  font: $s-font-20-sb;
+  margin-bottom: $title-bottom-margin;
+}
+
+.c-form__item + .c-form__item {
+  margin-top: $item-gap;
+}

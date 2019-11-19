@@ -14,6 +14,13 @@ export const FullScreenMenuLevel2 = ({ isSignedIn = false }) => (
       <ul className="mc-full-screen-menu__items">
         <li className="mc-full-screen-menu__category-item">
           <button className="mc-full-screen-menu__link" href="#">
+            <span className="mc-full-screen-menu__category-name">
+              All Women
+            </span>
+          </button>
+        </li>
+        <li className="mc-full-screen-menu__category-item">
+          <button className="mc-full-screen-menu__link" href="#">
             <span className="mc-full-screen-menu__category-name">Clothing</span>
             <Icon name="navigate-to" />
           </button>
@@ -41,13 +48,6 @@ export const FullScreenMenuLevel2 = ({ isSignedIn = false }) => (
         <li className="mc-full-screen-menu__category-item">
           <button className="mc-full-screen-menu__link" href="#">
             <span className="mc-full-screen-menu__category-name">Sales</span>
-          </button>
-        </li>
-        <li className="mc-full-screen-menu__category-item">
-          <button className="mc-full-screen-menu__link" href="#">
-            <span className="mc-full-screen-menu__category-name">
-              All Women
-            </span>
           </button>
         </li>
       </ul>
