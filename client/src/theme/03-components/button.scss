@@ -66,8 +66,14 @@ a.c-btn {
 
   &.c-btn--link {
     font: $s-font-14;
+    color: $s-blue;
     border-color: transparent;
     background-color: transparent;
-    text-decoration: underline;
+    // text-decoration: underline;
+  }
+
+  &.c-btn--inline {
+    font-size: inherit;
+    padding: 0;
   }
 }

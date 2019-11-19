@@ -1,7 +1,8 @@
-import React from 'react';
-import { Steps } from './steps.component';
-import notes from './steps.notes.md';
+import React from "react";
+import { Steps, StepsWithForm } from "./steps.component";
+import notes from "./steps.notes.md";
 
-export default { title: 'Components/Steps', parameters: { notes } };
+export default { title: "Components/Steps", parameters: { notes } };
 
-export const basic = () => <Steps>Hello world!</Steps>;
+export const basic = () => <Steps />;
+export const withForm = () => <StepsWithForm />;

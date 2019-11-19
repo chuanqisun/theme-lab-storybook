@@ -1,9 +1,57 @@
-@import '../00-settings/colors';
+@import "../00-settings/colors";
+@import "../00-settings/typography";
 
-$c-steps-root-background : $s-black;
-$c-steps-root-color : $s-white;
+$step-padding-vertical: 20px;
+$step-padding-side: 32px;
+$step-heading-bottom-margin: 12px;
+$step-heading-right-padding: 80px;
+$step-actions-top-margin: 32px;
+$divider-color: $s-gray-dark;
+$disabled-heading-color: $s-gray-light;
 
 .c-steps {
-color: $c-steps-root-color;
-background-color: $c-steps-root-background;
+  font: $s-font-14;
+  counter-reset: steps-counter;
+}
+
+.c-steps__step {
+  position: relative;
+  padding: $step-padding-vertical $step-padding-side;
+  border-top: 1px solid $divider-color;
+}
+
+.c-steps__step--disabled {
+  .c-steps__step-heading {
+    color: $disabled-heading-color;
+  }
+}
+
+.c-steps__step-heading {
+  position: relative;
+  counter-increment: steps-counter;
+  font: $s-font-20-sb;
+  margin-bottom: $step-heading-bottom-margin;
+  padding-right: $step-heading-right-padding; // make space for inline actions
+}
+
+.c-steps__heading-text {
+  position: relative;
+}
+
+.c-steps__step-heading::before {
+  content: counter(steps-counter) ". ";
+  position: absolute;
+  left: -$step-padding-side;
+}
+
+.c-steps__inline-actions {
+  position: absolute;
+  top: $step-padding-vertical;
+  right: 0;
+}
+
+.c-steps__step-actions {
+  display: flex;
+  margin-top: $step-actions-top-margin;
+  justify-content: flex-end;
 }

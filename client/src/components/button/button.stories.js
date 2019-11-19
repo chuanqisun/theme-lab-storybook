@@ -44,3 +44,13 @@ export const ghostSquare = () => (
 export const linkButton = () => (
   <button className="c-btn c-btn--link">Move to wishlist</button>
 );
+export const inlineLinkButton = () => (
+  <p>
+    Lorem ipsum dolor sit amet,&nbsp;
+    <button className="c-btn c-btn--link c-btn--inline">
+      consectetur adipiscing elit
+    </button>
+    , sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam
+  </p>
+);
