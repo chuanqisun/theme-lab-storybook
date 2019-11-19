@@ -1,0 +1,9 @@
+@import '../00-settings/colors';
+
+$c-steps-root-background : $s-black;
+$c-steps-root-color : $s-white;
+
+.c-steps {
+color: $c-steps-root-color;
+background-color: $c-steps-root-background;
+}
