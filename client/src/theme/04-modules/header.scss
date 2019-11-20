@@ -13,7 +13,7 @@ $toolbar-items-height: 48px;
 $toolbar-divider-height: 20px;
 
 .m-header {
-  color: $s-gray-dark;
+  color: $s-gray-160;
   font-family: $root-font-family;
   display: flex;
   flex-wrap: wrap;
@@ -72,7 +72,7 @@ $toolbar-divider-height: 20px;
     .m-header__divider {
       width: 1px;
       height: $toolbar-divider-height;
-      background-color: $s-gray;
+      background-color: $s-gray-120;
       margin: ($toolbar-items-height - $toolbar-divider-height) / 2 0;
     }
     .mc-categories {
@@ -84,7 +84,7 @@ $toolbar-divider-height: 20px;
 
 .mc-categories {
   width: 100%;
-  color: $s-gray-dark;
+  color: $s-gray-160;
 
   ul {
     list-style: none;
@@ -115,7 +115,7 @@ $menu-min-width: 256px;
 $menu-padding: 4px 0 20px;
 
 .mc-dropdown-menu {
-  color: $s-gray-dark;
+  color: $s-gray-160;
   min-width: $menu-min-width;
   position: absolute;
   background: $s-white;
@@ -190,7 +190,7 @@ $full-screen-menu-item-height: 48px;
 .mc-full-screen-menu__divider {
   border: none;
   height: 1px;
-  background-color: $s-gray-light;
+  background-color: $s-gray-90;
   margin: 8px 0;
 }
 

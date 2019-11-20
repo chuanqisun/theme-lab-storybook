@@ -1,9 +1,9 @@
-@import '../00-settings/typography';
+@import "../00-settings/typography";
 
 $m-message-bar-font-family: $s-primary-font-family;
 $m-message-bar-height: 48px;
 $m-message-bar-side-padding: 16px;
-$m-message-bar-bg: $s-gray;
+$m-message-bar-bg: $s-gray-120;
 $m-message-bar-speed: 500ms;
 $m-message-bar-enter-timing-func: cubic-bezier(0.5, 0, 0.5, 1);
 $m-message-bar-exit-timing-func: cubic-bezier(0.5, 0, 0.5, 1);
@@ -32,7 +32,8 @@ $m-message-bar-line-height: 1.2;
 
     &.entering {
       display: flex;
-      animation: enter $m-message-bar-speed $m-message-bar-enter-timing-func both;
+      animation: enter $m-message-bar-speed $m-message-bar-enter-timing-func
+        both;
     }
 
     &.leaving {
