@@ -62,18 +62,17 @@ $toolbar-divider-height: 20px;
     }
     .m-header__wishlist {
       display: flex;
+      margin-right: $toolbar-items-gap;
     }
     .m-header__search-label {
       display: inline;
-    }
-    .m-header__cart {
-      margin-left: $toolbar-items-gap;
     }
     .m-header__divider {
       width: 1px;
       height: $toolbar-divider-height;
       background-color: $s-gray-120;
-      margin: ($toolbar-items-height - $toolbar-divider-height) / 2 0;
+      margin: ($toolbar-items-height - $toolbar-divider-height) / 2
+        $toolbar-items-gap;
     }
     .mc-categories {
       margin-top: 32px;
